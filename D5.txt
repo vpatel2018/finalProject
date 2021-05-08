@@ -1,14 +1,20 @@
 1. What was easy about this assignment?
+
 _______________________________________________________________________________________________
 2. What was challenging about this assignment, or parts that you couldn’tget working correctly?
+
 _______________________________________________________________________________________________
 3. What did you like about this assignment?
+
 _______________________________________________________________________________________________
 4. What did you dislike about this assignment?
+
 _______________________________________________________________________________________________
 5. How did your team function, including details such as what each teammember contributed, 
 how the team communicated with each other, andhow team software development & design was 
 accomplished?
+
 _______________________________________________________________________________________________
 6. What did you learn from this assignment?
+
 _______________________________________________________________________________________________
