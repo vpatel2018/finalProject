@@ -1,5 +1,5 @@
 """
-
+A neural network and its associated perceptron units.
 """
 
 from random import uniform
