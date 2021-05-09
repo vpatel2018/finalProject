@@ -76,7 +76,9 @@ class NeuralNetwork:
 		input_units : [Perceptron,] : list of input perceptrons
 		hidden_units : [Perceptron,] : list of hidden perceptrons
 		output_units : [Perceptron,] : list of output perceptrons
-		units : [[Perceptron,],] : list of lists of output perceptrons
+		units : [[Perceptron,],] : list of lists of input perceptrons 
+			(layer 0), hidden perceptrons (layer 1 through length-2), 
+			and output perceptrons (layer length-1)
 		n_epochs : int : number of training epochs
 		eta : float : the initial learning rate
 
