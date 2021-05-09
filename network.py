@@ -29,6 +29,11 @@ class Perceptron:
 			the perceptron's weights
 		rnd_low : float : lower bound for random weight initialization
 		rnd_up : float : upper bound for random weight initialization
+
+	Attributes
+	--------------------------------------------------------------------
+		w : [float,] : list of float weights, where each weight is 
+			representative of an edge entering the perceptron
 	"""
 
 	def __init__(self, n_input_edges, rnd_low=-.1, rnd_up=.1):
