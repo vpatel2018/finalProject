@@ -43,7 +43,7 @@ def getErrorForOutputUnit(o_k, t_k):
   
 #
 
-def getErrorForHiddenUnit(o_h, weights, deltaKs):
+def getErrorForHiddenUnit(o_h, outputUnitWeights, outputUnitErrors):
   
     #NOTE: comments needed
       
@@ -53,8 +53,8 @@ def getErrorForHiddenUnit(o_h, weights, deltaKs):
     
     total = 0
     
-    for r in range(0, len(weights)):
-        product = weights[r] * deltaKs[r]
+    for r in range(0, len(outputUnitWeights)):
+        product = outputUnitWeights[r] * outputUnitErrors[r]
         total = total + product
     #
     
