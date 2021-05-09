@@ -18,6 +18,8 @@ def sigmoid(number):
 
 def initWeights(lowerLimit, upperLimit, sizeOfVector):
   
+    #NOTE: comments needed
+  
     weights = []
     
     for x in range(0, sizeOfVector):
@@ -31,6 +33,8 @@ def initWeights(lowerLimit, upperLimit, sizeOfVector):
 
 def getErrorForOutputUnit(o_k, t_k):
   
+    #NOTE: comments needed
+  
     """
     \delta_k = (o_k) * (1 - o_k) * (t_k - o_k)
     """
@@ -39,15 +43,24 @@ def getErrorForOutputUnit(o_k, t_k):
   
 #
 
-def getErrorForHiddenUnit(o_h):
+def getErrorForHiddenUnit(o_h, w_kh, deltaKs):
   
-    #NOTE: this function needs other parameters
-  
+    #NOTE: comments needed
+      
     """
     \delta_h = (o_h) * (1 - o_h) * \sum_{k \in outputs} (w_{kh} * \delta_k)
     """
     
-    pass
+    total = 0
+    
+    for r in range(0, len(w_kh)):
+        product = w_kh[r] * deltaKs[r]
+        total = total + product
+    #
+    
+    result = (o_h) * (1 - o_h) * (total)
+    
+    return result
   
 #
 
