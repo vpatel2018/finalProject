@@ -27,6 +27,7 @@ class NeuralNetwork:
         
         print('*********************************')
         
+        print('Checking list of input units')
         print('# of hidden units = ', len(self.hiddenUnits))
         
         for x in self.inputUnits:
@@ -38,6 +39,7 @@ class NeuralNetwork:
         
         print('*********************************')
         
+        print('Checking list of hidden units')
         print('# of output units = ', len(self.outputUnits))
         
         for x in self.hiddenUnits:
