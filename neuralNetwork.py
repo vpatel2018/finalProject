@@ -53,8 +53,18 @@ class NeuralNetwork:
         print('*********************************')
         
     #
-    
-    #add more functions if needed
+
+    def getErrorOfOutputUnit():
+
+        pass
+
+    #
+
+    def getErrorOfHiddenUnit():
+
+        pass
+
+    #
     
 #
 
