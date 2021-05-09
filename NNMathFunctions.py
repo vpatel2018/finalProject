@@ -1,4 +1,5 @@
 import math
+import random
 
 def sigmoid(number):
   
@@ -12,6 +13,19 @@ def sigmoid(number):
     result = 1.0 / denominator
     
     return result
+    
+#
+
+def initWeights(lowerLimit, upperLimit, sizeOfVector):
+  
+    weights = []
+    
+    for x in range(0, sizeOfVector):
+        number = random.uniform(lowerLimit, upperLimit)
+        weights.append(number) 
+    #
+    
+    return weights
     
 #
 
