@@ -3,9 +3,10 @@ import random
 #you can add additional fields if needed
 #this is used to create a neural network node
 class Neuron:
-    def __init__(self, nextNodes=[], edgeWeights=[]):
+    def __init__(self, nextNodes=[], edgeWeights=[], error=0):
         self.nextNodes = nextNodes
         self.edgeWeights = edgeWeights
+        self.error = error
     #
 #
 
