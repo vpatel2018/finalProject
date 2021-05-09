@@ -53,6 +53,8 @@ class NeuralNetwork:
         
     #
     
+    #add more functions if needed
+    
 #
 
 numInputUnits = 3
