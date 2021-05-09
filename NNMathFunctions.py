@@ -30,3 +30,25 @@ def initWeights(lowerLimit, upperLimit, sizeOfVector):
     return weights
     
 #
+
+#NOTE: may have to test this function
+def getErrorOfNN(trainingSet, outputUnitOutputs):
+  
+    #NOTE: comments needed
+  
+    error = 0
+    
+    for x in range(0, len(trainingSet)):
+        targetValue = trainingSet[x][len(trainingSet[x]) - 1]
+        errorForInstOfTrain = 0
+        for y in outputUnitOutputs[x]:
+            errorForInstOfTrain = errorForInstOfTrain + ((targetValue - y) * (targetValue - y))
+        #
+        error = error + errorForInstOfTrain
+    #
+    
+    error = error * 0.5
+    
+    return error
+    
+#
