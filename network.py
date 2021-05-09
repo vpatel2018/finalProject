@@ -66,6 +66,7 @@ class NeuralNetwork:
 		input_units : [Perceptron,] : list of input perceptrons
 		hidden_units : [Perceptron,] : list of hidden perceptrons
 		output_units : [Perceptron,] : list of output perceptrons
+		units : [[Perceptron,],] : list of lists of output perceptrons
 		n_epochs : int : number of training epochs
 		eta : float : the initial learning rate
 	"""
@@ -74,6 +75,11 @@ class NeuralNetwork:
 		self.input_units = [Perceptron(n_input_edges=n_input_edges_for_input_unit) for _ in range(n_input)]
 		self.hidden_units = [Perceptron(n_input_edges=n_input) for _ in range(n_hidden)]
 		self.output_units = [Perceptron(n_input_edges=n_hidden) for _ in range(n_hidden)]
+		self.units = [
+			self.input_units,
+			self.hidden_units,
+			self.output_units
+		]
 
 	def fit(self, D=D, n_epochs=5000, eta=.3):
 		"""
