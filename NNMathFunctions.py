@@ -16,21 +16,6 @@ def sigmoid(number):
     
 #
 
-def initWeights(lowerLimit, upperLimit, sizeOfVector):
-  
-    #NOTE: comments needed
-  
-    weights = []
-    
-    for x in range(0, sizeOfVector):
-        number = random.uniform(lowerLimit, upperLimit)
-        weights.append(number) 
-    #
-    
-    return weights
-    
-#
-
 #NOTE: may have to test this function
 def getErrorOfNN():
   
