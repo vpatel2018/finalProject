@@ -34,6 +34,11 @@ class Perceptron:
 	--------------------------------------------------------------------
 		w : [float,] : list of float weights, where each weight is 
 			representative of an edge entering the perceptron
+
+	Methods
+	--------------------------------------------------------------------
+		output : float : return the output of the perceptron using the 
+			sigmoid function
 	"""
 
 	def __init__(self, n_input_edges, rnd_low=-.1, rnd_up=.1):
@@ -45,7 +50,7 @@ class Perceptron:
 
 		Arguments
 		----------------------------------------------------------------
-			x : [float,] : input feature vector with 
+			x : [float,] : input feature vector with first element 1
 
 		Returns
 		----------------------------------------------------------------
@@ -74,6 +79,12 @@ class NeuralNetwork:
 		units : [[Perceptron,],] : list of lists of output perceptrons
 		n_epochs : int : number of training epochs
 		eta : float : the initial learning rate
+
+	Methods
+	--------------------------------------------------------------------
+		fit : None : fit the neural network
+		back_propagation : None : fit the neural network using the 
+			backpropagation algorithm
 	"""
 
 	def __init__(self, n_input_edges_for_input_unit=8, n_input=8, n_hidden=3, n_output=8):
