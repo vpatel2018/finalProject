@@ -32,23 +32,30 @@ def initWeights(lowerLimit, upperLimit, sizeOfVector):
 #
 
 #NOTE: may have to test this function
-def getErrorOfNN(trainingSet, outputUnitOutputs):
+def getErrorOfNN():
   
     #NOTE: comments needed
+    #parameters needed
   
-    error = 0
+    pass
     
-    for x in range(0, len(trainingSet)):
-        targetValue = trainingSet[x][len(trainingSet[x]) - 1]
-        errorForInstOfTrain = 0
-        for y in outputUnitOutputs[x]:
-            errorForInstOfTrain = errorForInstOfTrain + ((targetValue - y) * (targetValue - y))
-        #
-        error = error + errorForInstOfTrain
+#
+
+def getErrorOfOutputUnit(outputValue, targetValue):
+    
+    return (outputValue) * (1 - outputValue) * (targetValue - outputValue)
+    
+#
+
+def getErrorOfHiddenUnit(outputValue, connectionWeights, outputUnitErrors):
+ 
+    total = 0
+  
+    for x in range(0, len(connectionWeights)):
+        product = connectionWeights[x] * outputUnitErrors[x]
+        total = total + product
     #
     
-    error = error * 0.5
-    
-    return error
-    
+    return (outputValue) * (1 - outputValue) * total
+  
 #
