@@ -15,17 +15,19 @@ def sigmoid(number):
     
 #
 
-def getErrorForOutputUnit():
+def getErrorForOutputUnit(o_k, t_k):
   
     """
-    \delta_k = (o_k) * (1 - o_k) * (t_k - o_k);
+    \delta_k = (o_k) * (1 - o_k) * (t_k - o_k)
     """
     
-    pass
+    return (o_k) * (1.0 - o_k) * (t_k - o_k)
   
 #
 
-def getErrorForHiddenUnit():
+def getErrorForHiddenUnit(o_h):
+  
+    #NOTE: this function needs other parameters
   
     """
     \delta_h = (o_h) * (1 - o_h) * \sum_{k \in outputs} (w_{kh} * \delta_k)
@@ -36,6 +38,8 @@ def getErrorForHiddenUnit():
 #
 
 def getWeightChange():
+  
+    #NOTE: this function needs parameters
     
     """
     \Delta w_{ji} = \eta * \delta_j * x_{ji}
