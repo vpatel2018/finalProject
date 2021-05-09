@@ -15,7 +15,7 @@ def sigmoid(number):
     
 #
 
-def getErrForOutputUnit():
+def getErrorForOutputUnit():
   
     """
     \delta_k = (o_k) * (1 - o_k) * (t_k - o_k);
@@ -25,7 +25,7 @@ def getErrForOutputUnit():
   
 #
 
-def getErrForHiddenUnit():
+def getErrorForHiddenUnit():
   
     """
     \delta_h = (o_h) * (1 - o_h) * \sum_{k \in outputs} (w_{kh} * \delta_k)
