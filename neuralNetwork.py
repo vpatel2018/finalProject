@@ -74,8 +74,6 @@ class NeuralNetwork:
     
     def doBackwardPropagation(self, targetValues, learningRate, inputVector):
         
-        #may need more parameters
-        
         NeuralNetwork.updateOutputUnitErrors(self, targetValues)
         NeuralNetwork.updateHiddenUnitErrors(self)
         NeuralNetwork.updateNetworkWeights(self, learningRate, inputVector)
