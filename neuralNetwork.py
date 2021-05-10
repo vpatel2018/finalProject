@@ -158,8 +158,9 @@ class NeuralNetwork:
         
         for x in range(0, len(self.outputUnits)):
             NeuralNetwork.updateOutputForOutputUnit(self, x)
-            #use sigmoid function for output of output units
         #
+        
+        #QUESTION: Do we use a sigmoid function for the output of output units?
         
     #
     
