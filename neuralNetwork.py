@@ -115,7 +115,7 @@ class NeuralNetwork:
     def doForwardPropagation(self, inputVector):
         
         # Propagate input forward through the network.
-        # compute the output o_u of every unit u in the entire network
+        # compute the output o_u of every unit u (except input units I believe) in the entire network
         
         pass
         
