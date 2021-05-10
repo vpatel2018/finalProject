@@ -82,11 +82,3 @@ class NeuralNetwork:
     #
     
 #
-
-numInputUnits = 3
-numHiddenUnits = 5
-numOutputUnits = 6
-lowerLimit = 1
-upperLimit = 2
-network = NeuralNetwork(numInputUnits, numHiddenUnits, numOutputUnits, lowerLimit, upperLimit)
-network.printNeuralNetwork()
