@@ -174,8 +174,13 @@ class NeuralNetwork:
     def trainOnExample(self, inputVector, outputVector):
         
         NeuralNetwork.doForwardPropagation(self, inputVector)
+        hiddenUnits = [Neuron(self.hiddenUnits[x].edgeWeights, self.hiddenUnits[x].inputs, self.hiddenUnits[x].error, self.hiddenUnits[x].output) for x in range(len(self.hiddenUnits))]
+        outputUnits = [Neuron(self.outputUnits[x].edgeWeights, self.outputUnits[x].inputs, self.outputUnits[x].error, self.outputUnits[x].output) for x in range(len(self.outputUnits))]
+        array = [hiddenUnits, outputUnits]
         NeuralNetwork.doBackwardPropagation(self, outputVector)
         NeuralNetwork.performCleanUp(self)
+        
+        return array
         
     #
     
