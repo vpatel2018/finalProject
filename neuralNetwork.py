@@ -9,7 +9,7 @@ class Neuron:
         self.inputs = inputs
         self.error = error
         self.output = output
-    #
+    # 
 #
 
 class NeuralNetwork:
@@ -143,6 +143,12 @@ class NeuralNetwork:
         
     #
     
+    def sigmoid(self, output):
+        
+        pass
+           
+    #
+    
     def doForwardPropagation(self, inputVector):
         
         for x in range(0, len(self.inputUnits)):
@@ -151,13 +157,13 @@ class NeuralNetwork:
         
         for x in range(0, len(self.hiddenUnits)):
             NeuralNetwork.updateOutputForHiddenUnit(self, x)
-            #use a sigmoid function for output of hidden units
+            self.hiddenUnits[x].output = NeuralNetwork.sigmoid(self, self.hiddenUnits[x].output)
             self.hiddenUnits[x].inputs = [self.hiddenUnits[x].output] * len(self.hiddenUnits[x].inputs)
         #
         
         for x in range(0, len(self.outputUnits)):
             NeuralNetwork.updateOutputForOutputUnit(self, x)
-            #use a sigmoid function for output of output units
+            self.outputUnits[x].output = NeuralNetwork.sigmoid(self, self.outputUnits[x].output)
         #
         
     #
