@@ -77,7 +77,7 @@ class NeuralNetwork:
         #may need more parameters
         
         NeuralNetwork.updateOutputUnitErrors(self, targetValues)
-        NeuralNetwork.updateHiddenUnit(self)
+        NeuralNetwork.updateHiddenUnitErrors(self)
         NeuralNetwork.updateNetworkWeights(self, learningRate, inputVector)
            
     #
