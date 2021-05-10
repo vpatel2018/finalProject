@@ -23,37 +23,6 @@ class NeuralNetwork:
 
     #
     
-    #used for testing purposes
-    def printNeuralNetwork(self):
-        
-        print('*********************************')
-        
-        print('Checking list of input units')
-        print('# of hidden units = ', len(self.hiddenUnits))
-        
-        for x in self.inputUnits:
-            #tests if all nodes in self.inputUnits has node.nextNodes equal to hidden units
-            #tests to see if the number of weights is equal to number of hidden units
-            #tests to see if weights are all unique and random
-            print(x.nextNodes == self.hiddenUnits, len(x.edgeWeights) == len(self.hiddenUnits), ', initial edge weights =', x.edgeWeights)
-        #
-        
-        print('*********************************')
-        
-        print('Checking list of hidden units')
-        print('# of output units = ', len(self.outputUnits))
-        
-        for x in self.hiddenUnits:
-            #tests if all nodes in self.hiddenUnits has node.nextNodes equal to output units
-            #tests to see if the number of weights is equal to number of output units
-            #tests to see if weights are all unique and random
-            print(x.nextNodes == self.outputUnits, len(x.edgeWeights) == len(self.outputUnits), ', initial edge weights = ', x.edgeWeights)
-        #        
-        
-        print('*********************************')
-        
-    #
-
     def getErrorOfOutputUnit():
 
         pass
