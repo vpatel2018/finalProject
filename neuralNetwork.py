@@ -145,8 +145,12 @@ class NeuralNetwork:
     
     def sigmoid(self, output):
         
-        pass
-           
+        negatedOutput = -1 * output
+        denominator = 1 + math.pow(math.e, negatedOutput)
+        result = (1.0) / (1.0 * denominator)
+            
+        return result
+               
     #
     
     def doForwardPropagation(self, inputVector):
