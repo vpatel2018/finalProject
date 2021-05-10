@@ -3,8 +3,7 @@ import random
 #you can add additional fields if needed
 #this is used to create a neural network node
 class Neuron:
-    def __init__(self, nextNodes=[], edgeWeights=[], inputs=[], error=0, output=0):
-        self.nextNodes = nextNodes
+    def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
         self.edgeWeights = edgeWeights
         self.inputs = inputs
         self.error = error
@@ -15,13 +14,14 @@ class Neuron:
 class NeuralNetwork:
     
     #creates neural network
-    def __init__(self, numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums):
+    def __init__(self, numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate):
         
         #NOTE: comments needed
     
         self.outputUnits = [Neuron() for x in range(numOutputUnits)]
-        self.hiddenUnits = [Neuron(self.outputUnits, [random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)], [0 for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
-        self.inputUnits = [Neuron(self.hiddenUnits, [random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)], [0 for y in range(numHiddenUnits)]) for x in range(numInputUnits)]
+        self.hiddenUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)], [0 for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
+        self.inputUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)], [0 for y in range(numHiddenUnits)]) for x in range(numInputUnits)]
+        self.learningRate = learningRate
 
     #
     
@@ -64,20 +64,36 @@ class NeuralNetwork:
 
     #
     
-    def updateNetworkWeights(self, learningRate, inputVector):
+    def updateNetworkWeights(self):
         
         # w_{ji} = w_{ji} + \Delta w_{ji}
         # \Delta w_{ji} = \eta * \delta_j * x_{ji}
-     
-        pass
+        
+        for x in range(0, len(self.inputUnits)):
+            for y in range(0, len(self.hiddenUnits)):
+                delta = self.hiddenUnits[y].error
+                inputValue = self.inputUnits[x].inputs[y]
+                change = delta * inputValue * self.learningRate
+                self.inputUnits[x].edgeWeights[y] = self.inputUnits[x].edgeWeights[y] + change
+            #
+        #
+        
+        for x in range(0, len(self.hiddenUnits)):
+            for y in range(0, len(self.outputUnits)):
+                delta = self.outputUnits[y].error
+                inputValue = self.hiddenUnits[x].inputs[y]
+                change = delta * inputValue * self.learningRate
+                self.hiddenUnits[x].edgeWeights[y] = self.hiddenUnits[x].edgeWeights[y] + change
+            #
+        #
         
     #
     
-    def doBackwardPropagation(self, targetValues, learningRate, inputVector):
+    def doBackwardPropagation(self, targetValues):
         
         NeuralNetwork.updateOutputUnitErrors(self, targetValues)
         NeuralNetwork.updateHiddenUnitErrors(self)
-        NeuralNetwork.updateNetworkWeights(self, learningRate, inputVector)
+        NeuralNetwork.updateNetworkWeights(self)
            
     #
     
