@@ -95,21 +95,6 @@ class NeuralNetwork:
         NeuralNetwork.updateOutputUnitErrors(self, targetValues)
         NeuralNetwork.updateHiddenUnitErrors(self)
         NeuralNetwork.updateNetworkWeights(self)
-        
-        for x in range(0, len(self.inputUnits)):
-            self.inputUnits[x].inputs = [0] * len(self.inputUnits[x].inputs)
-        #
-        
-        for x in range(0, len(self.hiddenUnits)):
-            self.hiddenUnits[x].error = 0
-            self.hiddenUnits[x].output = 0
-            self.hiddenUnits[x].inputs = [0] * len(self.hiddenUnits[x].inputs)
-        #
-        
-        for x in range(0, len(self.outputUnits)):
-            self.outputUnits[x].error = 0
-            self.outputUnits[x].output = 0
-        #
            
     #
     
@@ -172,10 +157,35 @@ class NeuralNetwork:
         
     #
     
+    def performCleanUp(self):
+        
+        itemsToClean = [self.inputUnits, self.hiddenUnits, self.outputUnits]
+        
+        for h in range(0, len(itemsToClean)):
+            for x in range(0, len(itemsToClean[h])):
+                itemsToClean[h][x].error = 0
+                itemsToClean[h][x].output = 0
+                itemsToClean[h][x].inputs = [0] * len(itemsToClean[h][x].inputs)
+            #
+        #
+        
+    #
+    
     def trainOnExample(self, inputVector, outputVector):
         
         NeuralNetwork.doForwardPropagation(self, inputVector)
         NeuralNetwork.doBackwardPropagation(self, outputVector)
+        NeuralNetwork.performCleanUp(self)
+        
+    #
+    
+    def getPredictedOutput(self, inputVector):
+        
+        NeuralNetwork.doForwardPropagation(self, inputVector)
+        array = [self.outputUnits[x].output for x in range(len(self.outputUnits))]
+        NeuralNetwork.performCleanUp(self)
+        
+        return array
         
     #
     
