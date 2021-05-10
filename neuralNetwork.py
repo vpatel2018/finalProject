@@ -151,16 +151,14 @@ class NeuralNetwork:
         
         for x in range(0, len(self.hiddenUnits)):
             NeuralNetwork.updateOutputForHiddenUnit(self, x)
+            #use a sigmoid function for output of hidden units
             self.hiddenUnits[x].inputs = [self.hiddenUnits[x].output] * len(self.hiddenUnits[x].inputs)
         #
         
-        #QUESTION: Do we use a sigmoid function for the output of hidden units?
-        
         for x in range(0, len(self.outputUnits)):
             NeuralNetwork.updateOutputForOutputUnit(self, x)
+            #use a sigmoid function for output of output units
         #
-        
-        #QUESTION: Do we use a sigmoid function for the output of output units?
         
     #
     
