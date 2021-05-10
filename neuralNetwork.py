@@ -184,14 +184,4 @@ class NeuralNetwork:
         
     #
     
-    def getPredictedOutput(self, inputVector):
-        
-        NeuralNetwork.doForwardPropagation(self, inputVector)
-        array = [self.outputUnits[x].output for x in range(len(self.outputUnits))]
-        NeuralNetwork.performCleanUp(self)
-        
-        return array
-        
-    #
-    
 #
