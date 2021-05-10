@@ -63,21 +63,22 @@ class NeuralNetwork:
 
     #
     
-    def updateNetworkWeights(self):
+    def updateNetworkWeights(self, learningRate, inputVector):
         
-        #may need more parameters
+        # w_{ji} = w_{ji} + \Delta w_{ji}
+        # \Delta w_{ji} = \eta * \delta_j * x_{ji}
      
         pass
         
     #
     
-    def doBackwardPropagation(self, targetValues):
+    def doBackwardPropagation(self, targetValues, learningRate, inputVector):
         
         #may need more parameters
         
         NeuralNetwork.updateOutputUnitErrors(self, targetValues)
         NeuralNetwork.updateHiddenUnit(self)
-        NeuralNetwork.updateNetworkWeights(self)
+        NeuralNetwork.updateNetworkWeights(self, learningRate, inputVector)
            
     #
     
