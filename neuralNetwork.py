@@ -112,4 +112,10 @@ class NeuralNetwork:
            
     #
     
+    def doForwardPropagation(self, inputVector):
+        
+        pass
+        
+    #
+    
 #
