@@ -94,6 +94,21 @@ class NeuralNetwork:
         NeuralNetwork.updateOutputUnitErrors(self, targetValues)
         NeuralNetwork.updateHiddenUnitErrors(self)
         NeuralNetwork.updateNetworkWeights(self)
+        
+        for x in range(0, len(self.inputUnits)):
+            self.inputUnits[x].inputs = [0] * len(self.inputUnits[x].inputs)
+        #
+        
+        for x in range(0, len(self.hiddenUnits)):
+            self.hiddenUnits[x].error = 0
+            self.hiddenUnits[x].output = 0
+            self.hiddenUnits[x].inputs = [0] * len(self.hiddenUnits[x].inputs)
+        #
+        
+        for x in range(0, len(self.outputUnits)):
+            self.outputUnits[x].error = 0
+            self.outputUnits[x].output = 0
+        #
            
     #
     
