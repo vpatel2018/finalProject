@@ -1,4 +1,5 @@
 import random
+import math
 
 #you can add additional fields if needed
 #this is used to create a neural network node
@@ -112,12 +113,54 @@ class NeuralNetwork:
            
     #
     
+    def updateOutputForHiddenUnit(self, index):
+        
+        total = 0
+        
+        for x in range(0, len(self.inputUnits)):
+            inputValue = self.inputUnits[x].inputs[index]
+            weight = self.inputUnits[x].edgeWeights[index]
+            product = inputValue * weight
+            total += product
+        #
+        
+        self.hiddenUnits[index].output = total
+           
+    #
+    
+    def updateOutputForOutputUnit(self, index):
+        
+        total = 0
+        
+        for x in range(0, len(self.hiddenUnits)):
+            inputValue = self.hiddenUnits[x].inputs[index]
+            weight = self.hiddenUnits[x].edgeWeights[index]
+            product = inputValue * weight
+            total += product
+        #
+        
+        self.outputUnits[index].output = total
+        
+    #
+    
     def doForwardPropagation(self, inputVector):
         
-        # Propagate input forward through the network.
-        # compute the output o_u of every unit u (except input units I believe) in the entire network
+        for x in range(0, len(self.inputUnits)):
+            self.inputUnits[x].inputs = [inputVector[x]] * len(self.inputUnits[x].inputs) 
+        #
         
-        pass
+        for x in range(0, len(self.hiddenUnits)):
+            NeuralNetwork.updateOutputForHiddenUnit(self, x)
+            self.hiddenUnits[x].inputs = [self.hiddenUnits[x].output] * len(self.hiddenUnits[x].inputs)
+        #
+        
+        #QUESTION: Do we use a sigmoid function for the output of hidden units?
+        
+        for x in range(0, len(self.outputUnits)):
+            NeuralNetwork.updateOutputForOutputUnit(self, x)
+        #
+        
+        #QUESTION: Do we use a sigmoid function for the output of output units?
         
     #
     
