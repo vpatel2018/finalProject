@@ -164,4 +164,11 @@ class NeuralNetwork:
         
     #
     
+    def trainOnExample(self, inputVector, outputVector):
+        
+        NeuralNetwork.doForwardPropagation(self, inputVector)
+        NeuralNetwork.doBackwardPropagation(self, outputVector)
+        
+    #
+    
 #
