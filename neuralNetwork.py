@@ -1,7 +1,6 @@
 import random
 import math
 
-#you can add additional fields if needed
 #this is used to create a neural network node
 class Neuron:
     def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
