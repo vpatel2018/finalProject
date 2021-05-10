@@ -3,9 +3,10 @@ import random
 #you can add additional fields if needed
 #this is used to create a neural network node
 class Neuron:
-    def __init__(self, nextNodes=[], edgeWeights=[], error=0, output=0):
+    def __init__(self, nextNodes=[], edgeWeights=[], inputs=[], error=0, output=0):
         self.nextNodes = nextNodes
         self.edgeWeights = edgeWeights
+        self.inputs = inputs
         self.error = error
         self.output = output
     #
@@ -19,8 +20,8 @@ class NeuralNetwork:
         #NOTE: comments needed
     
         self.outputUnits = [Neuron() for x in range(numOutputUnits)]
-        self.hiddenUnits = [Neuron(self.outputUnits, [random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
-        self.inputUnits = [Neuron(self.hiddenUnits, [random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)]) for x in range(numInputUnits)]
+        self.hiddenUnits = [Neuron(self.outputUnits, [random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)], [0 for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
+        self.inputUnits = [Neuron(self.hiddenUnits, [random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)], [0 for y in range(numHiddenUnits)]) for x in range(numInputUnits)]
 
     #
     
