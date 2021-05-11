@@ -181,7 +181,7 @@ class NeuralNetwork:
     def sigmoid(self, outputValue):
         
         '''
-        input: outputValue is a number representing the output of a unit in a neural network
+        input: outputValue = output of a unit in a neural network
         
         output: a decimal between 0 and 1
         '''
@@ -222,14 +222,12 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
-    #REVIEW THE COMMENTS BELOW
-    
     #used to help a neural network learn from a training example
     def trainOnExample(self, inputVector, outputVector):
         
         '''
         input: inputVector = list of numbers that will be fed to the input units, 
-        outputVector represents a list of values that should be outputted by the output units
+        outputVector = list of values that should be outputted by the output units
         
         output: a list of the format [hiddenUnitOutputs, outputUnitOutputs], where hiddenUnitOutputs is a
         list of outputs for all hidden units and outputUnitOutputs is a list of outputs for all output units
