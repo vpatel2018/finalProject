@@ -239,18 +239,15 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
-    #TODO: edit, revise, add comments
-    
     #used to help a neural network learn from a training example
     def trainOnExample(self, inputVector, outputVector):
         
         '''
-        input: inputVector represents a list of numbers that will be fed to the input units, outputVector represents 
-        a list of values that should be outputted by the output units
+        input: inputVector represents a list of numbers that will be fed to the input units, 
+        outputVector represents a list of values that should be outputted by the output units
         
         output: a list of the format [hiddenUnitOutputs, outputUnitOutputs], where hiddenUnitOutputs is a
-        list of outputs for all hidden units in a neural network and outputUnitOutputs is a list of outputs
-        for all output units in a neural network
+        list of outputs for all hidden units and outputUnitOutputs is a list of outputs for all output units
         '''
         
         NeuralNetwork.doForwardPropagation(self, inputVector) 
