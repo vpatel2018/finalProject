@@ -9,7 +9,7 @@ class Neuron:
         self.edgeWeights = edgeWeights #contains weights of edges that connect a unit to multiple other units (MAY NEED TO FIX)
         self.inputs = inputs #used to store input taken by a neural network
         self.error = error #represents error for a unit in a neural network
-        self.output = output #represents output of a unit in a neural network
+        self.output = output #represents output for a unit in a neural network
     # 
 #
 
