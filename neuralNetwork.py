@@ -3,11 +3,11 @@ import math
 
 #TODO: polish source code documentation if needed
 
-#used to create a node for neural network
+#used to create a node for a neural network
 class Neuron:
     def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
         self.edgeWeights = edgeWeights #contains weights of edges that connect a unit to multiple other units
-        self.inputs = inputs #contains value that will go from an input unit to every hidden unit or from a hidden unit to every output unit
+        self.inputs = inputs #contains a value that will go from an input unit to every hidden unit or from a hidden unit to every output unit
         self.error = error #error for a unit
         self.output = output #value that a unit outputs
     # 
@@ -28,7 +28,7 @@ class NeuralNetwork:
         upperLimitForRandNums = maximum value for a random number
         learningRate = a float representing a learning rate
         
-        NOTE: all weights for the neural network will be initialized to a number >= lowerLimitForRandNums and number <= upperLimitForRandNums 
+        NOTE: all weights for a neural network will be initialized to a number >= lowerLimitForRandNums and <= upperLimitForRandNums 
         '''
         
         self.outputUnits = [Neuron() for x in range(numOutputUnits)]
@@ -41,7 +41,7 @@ class NeuralNetwork:
     #*********************************************************************************************************#
     
     #this function is used when back propagation is being done
-    #updates the error for an output unit
+    #updates the error for all the output units in a neural network
     def updateOutputUnitErrors(self, targetValues):
         
         '''
@@ -60,7 +60,7 @@ class NeuralNetwork:
     #*********************************************************************************************************#
 
     #this function is used when back propagation is being done
-    #updates the error for a hidden unit
+    #updates the error for all the hidden units in a neural network
     def updateHiddenUnitErrors(self):
 
         for x in range(0, len(self.hiddenUnits)):
@@ -117,7 +117,8 @@ class NeuralNetwork:
     def doBackwardPropagation(self, targetValues):
         
         '''
-        targetValues = list of values that will be compared with outputs of all the output units in a neural network
+        targetValues = list of values that will be compared with outputs of 
+        all the output units in a neural network
         '''
         
         NeuralNetwork.updateOutputUnitErrors(self, targetValues) 
@@ -157,7 +158,7 @@ class NeuralNetwork:
     def updateOutputForOutputUnit(self, index):
         
         '''
-        -> index is a number >= 0 and it it used to refer to a certain output unit
+        -> index is a number >= 0 and it is used to refer to a certain output unit
         '''
         
         total = 0
