@@ -7,7 +7,7 @@ import math
 class Neuron:
     def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
         self.edgeWeights = edgeWeights #contains weights of edges that connect a unit to multiple other units
-        self.inputs = inputs #contains input value that will go from an input unit to every hidden units
+        self.inputs = inputs #contains input value that will go from an input unit to every hidden unit or from a hidden unit to every output unit
         self.error = error #error for output or hidden unit
         self.output = output #value that hidden or output unit outputs
     # 
