@@ -13,11 +13,11 @@ class Neuron:
     # 
 #
 
+#used to create a neural network
 class NeuralNetwork:
     
     #*********************************************************************************************************#
-     
-    #this method is used to create a neural network
+    
     def __init__(self, numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate):
         
         '''
