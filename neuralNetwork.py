@@ -45,7 +45,7 @@ class NeuralNetwork:
     def updateOutputUnitErrors(self, targetValues):
         
         '''
-        targetValues = list of values that will be compared with outputs of 
+        targetValues = list of values that will be compared with the outputs of 
         all the output units in a neural network
         '''
 
@@ -117,7 +117,7 @@ class NeuralNetwork:
     def doBackwardPropagation(self, targetValues):
         
         '''
-        targetValues = list of values that will be compared with outputs of 
+        targetValues = list of values that will be compared with the outputs of 
         all the output units in a neural network
         '''
         
@@ -134,7 +134,7 @@ class NeuralNetwork:
     def updateOutputForHiddenUnit(self, index):
         
         '''
-        -> index is a number >= 0 and it is used to refer to a certain hidden unit
+        index is a number >= 0 and it is used to refer to a certain hidden unit
         '''
         
         total = 0
@@ -158,7 +158,7 @@ class NeuralNetwork:
     def updateOutputForOutputUnit(self, index):
         
         '''
-        -> index is a number >= 0 and it is used to refer to a certain output unit
+        index is a number >= 0 and it is used to refer to a certain output unit
         '''
         
         total = 0
@@ -200,7 +200,7 @@ class NeuralNetwork:
     def doForwardPropagation(self, inputVector):
         
         '''
-        inputVector: represents a list of values that will be fed to the input units
+        inputVector = list of values that will be fed to the input units
         '''
         
         for x in range(0, len(self.inputUnits)): 
@@ -222,11 +222,13 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #REVIEW THE COMMENTS BELOW
+    
     #used to help a neural network learn from a training example
     def trainOnExample(self, inputVector, outputVector):
         
         '''
-        input: inputVector represents a list of numbers that will be fed to the input units, 
+        input: inputVector = list of numbers that will be fed to the input units, 
         outputVector represents a list of values that should be outputted by the output units
         
         output: a list of the format [hiddenUnitOutputs, outputUnitOutputs], where hiddenUnitOutputs is a
