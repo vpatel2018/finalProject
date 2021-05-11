@@ -38,11 +38,11 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
-    #computes the error of an output unit and stores it in the output unit for every output unit in a neural network
+    #computes the error for an output unit and stores it in the output unit for every output unit in a neural network
     def updateOutputUnitErrors(self, targetValues):
         
         '''
-        targetValues = a list of values that will be compared with outputs of all the output units in a neural network
+        targetValues = list of values that will be compared with outputs of all the output units in a neural network
         '''
 
         for x in range(0, len(self.outputUnits)):
@@ -54,10 +54,8 @@ class NeuralNetwork:
     #
         
     #*********************************************************************************************************#
-    
-    #TODO: edit, revise, or add more comments
 
-    #computes the error of a hidden unit and stores it in the hidden unit for every hidden unit in a neural network
+    #computes the error for a hidden unit and stores it in the hidden unit for every hidden unit in a neural network
     def updateHiddenUnitErrors(self):
 
         for x in range(0, len(self.hiddenUnits)):
@@ -114,7 +112,7 @@ class NeuralNetwork:
     def doBackwardPropagation(self, targetValues):
         
         '''
-        targetValues = a list of values that will be compared with outputs of all the output units in a neural network
+        targetValues = list of values that will be compared with outputs of all the output units in a neural network
         '''
         
         NeuralNetwork.updateOutputUnitErrors(self, targetValues) 
@@ -124,6 +122,8 @@ class NeuralNetwork:
     #
     
     #*********************************************************************************************************#
+    
+    #TODO: edit, revise, add comments
     
     #computes the output of a hidden unit and stores it in the hidden unit
     def updateOutputForHiddenUnit(self, index):
