@@ -1,6 +1,8 @@
 import random
 import math
 
+#TODO: polish source code documentation
+
 #used to create a node for neural network
 class Neuron:
     def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
