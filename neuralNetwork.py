@@ -63,10 +63,11 @@ class NeuralNetwork:
         for x in range(0, len(self.hiddenUnits)):
             
             hiddenUnit = self.hiddenUnits[x]
-            total = 0
             edgeWeights = hiddenUnit.edgeWeights
             numOutputUnits = len(self.outputUnits)
             outputUnitErrors = [self.outputUnits[h].error for h in range(numOutputUnits)]
+            
+            total = 0
 
             for y in range(0, len(edgeWeights)):
                 product = edgeWeights[y] * outputUnitErrors[y]
