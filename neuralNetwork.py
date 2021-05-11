@@ -15,7 +15,7 @@ class Neuron:
 class NeuralNetwork:
     
     #*********************************************************************************************************#
-    
+     
     def __init__(self, numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate):
         
         self.outputUnits = [Neuron() for x in range(numOutputUnits)]
@@ -191,12 +191,13 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
-    #TODO: test this function
     def trainOnExample(self, inputVector, outputVector):
         
         NeuralNetwork.doForwardPropagation(self, inputVector) 
-        hiddenUnitOutputs = [self.hiddenUnits[x].output for x in range(len(self.hiddenUnits))] 
-        outputUnitOutputs = [self.outputUnits[x].output for x in range(len(self.outputUnits))] 
+        numHiddenUnits = len(self.hiddenUnits) 
+        numOutputUnits = len(self.outputUnits) 
+        hiddenUnitOutputs = [self.hiddenUnits[x].output for x in range(numHiddenUnits)] 
+        outputUnitOutputs = [self.outputUnits[x].output for x in range(numOutputUnits)] 
         array = [hiddenUnitOutputs, outputUnitOutputs] 
         NeuralNetwork.doBackwardPropagation(self, outputVector) 
         NeuralNetwork.performCleanUp(self) 
