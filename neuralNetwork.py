@@ -1,7 +1,7 @@
 import random
 import math
 
-#TODO: polish source code documentation
+#TODO: polish source code documentation if needed
 
 #used to create a node for neural network
 class Neuron:
