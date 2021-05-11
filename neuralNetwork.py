@@ -1,6 +1,8 @@
 import random
 import math
 
+#TODO: edit, revise, or add more comments
+
 #used to create a node for neural network
 class Neuron:
     def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
@@ -42,8 +44,7 @@ class NeuralNetwork:
     def updateOutputUnitErrors(self, targetValues):
         
         '''
-        targetValues = a list of values that will be compared with outputs 
-        of all the output units in a neural network
+        targetValues = a list of values that will be compared with outputs of all the output units in a neural network
         '''
 
         for x in range(0, len(self.outputUnits)):
@@ -112,8 +113,7 @@ class NeuralNetwork:
     def doBackwardPropagation(self, targetValues):
         
         '''
-        targetValues = a list of values that will be compared with outputs 
-        of all the output units in a neural network
+        targetValues = a list of values that will be compared with outputs of all the output units in a neural network
         '''
         
         NeuralNetwork.updateOutputUnitErrors(self, targetValues) 
@@ -177,6 +177,7 @@ class NeuralNetwork:
         
         '''
         input: outputValue is a number representing the output of a unit in a neural network
+        
         output: a decimal between 0 and 1
         '''
         
@@ -230,7 +231,17 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #used to help a neural network learn from a training example
     def trainOnExample(self, inputVector, outputVector):
+        
+        '''
+        input: inputVector represents a list of numbers that will be fed to all the input units of a neural network, 
+        outputVector represents a list of values that should be outputted by all output units in a neural network
+        
+        output: a list of the format [hiddenUnitOutputs, outputUnitOutputs], where hiddenUnitOutputs is a
+        list of outputs for all hidden units in a neural network and outputUnitOutputs is a list of outputs
+        for all output units in a neural network
+        '''
         
         NeuralNetwork.doForwardPropagation(self, inputVector) 
         numHiddenUnits = len(self.hiddenUnits) 
