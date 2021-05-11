@@ -131,8 +131,6 @@ def main():
 		)
 
 if __name__ == "__main__":
-	test_sum_of_squared_errors()
-	test_hidden_unit_encodings()
-	
-	# FIXME: remove testing function, run main instead
-	#main()
+	#test_sum_of_squared_errors()
+	#test_hidden_unit_encodings()
+	main()
