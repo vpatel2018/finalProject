@@ -9,5 +9,5 @@ if __name__ == "__main__":
    upperLimitForRandNums = 0.1
    learningRate = 0.3
    network = NeuralNetwork(numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate)
-    
+   
 #
