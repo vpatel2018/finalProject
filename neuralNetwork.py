@@ -1,8 +1,6 @@
 import random
 import math
 
-#TODO: edit, revise, or add more comments
-
 #used to create a node for neural network
 class Neuron:
     def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
@@ -56,6 +54,8 @@ class NeuralNetwork:
     #
         
     #*********************************************************************************************************#
+    
+    #TODO: edit, revise, or add more comments
 
     #computes the error of a hidden unit and stores it in the hidden unit for every hidden unit in a neural network
     def updateHiddenUnitErrors(self):
