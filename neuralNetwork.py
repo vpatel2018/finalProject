@@ -1,14 +1,13 @@
 import random
 import math
 
-#TODO: write multi-line and single line comments
-
+#used to create a node for neural network
 class Neuron:
     def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
-        self.edgeWeights = edgeWeights
-        self.inputs = inputs
-        self.error = error
-        self.output = output
+        self.edgeWeights = edgeWeights #contains weights of edges that connect a unit to multiple other units
+        self.inputs = inputs #contains input value that will go from an input unit to every hidden units
+        self.error = error #error for output or hidden unit
+        self.output = output #value that hidden or output unit outputs
     # 
 #
 
@@ -16,7 +15,19 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
      
+    #this method is used to create a neural network
     def __init__(self, numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate):
+        
+        '''
+        numInputUnits = number of input units in a neural network
+        numHiddenUnits = number of hidden units in a neural network
+        numOutputUnits = number of output units in a neural network
+        lowerLimitForRandNums = minimum value for a random number
+        upperLimitForRandNums = maximum value for a random number
+        learningRate = a float representing a learning rate
+        
+        NOTE: all weights for the neural network will be initialized to a number >= lowerLimitForRandNums and number <= upperLimitForRandNums 
+        '''
         
         self.outputUnits = [Neuron() for x in range(numOutputUnits)]
         self.hiddenUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)], [0 for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
@@ -27,7 +38,13 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #computes the error of an output unit and stores it in the output unit for every output unit in a neural network
     def updateOutputUnitErrors(self, targetValues):
+        
+        '''
+        targetValues = a list of values that will be compared with outputs 
+        of all the output units in a neural network
+        '''
 
         for x in range(0, len(self.outputUnits)):
             output = self.outputUnits[x].output
@@ -36,39 +53,35 @@ class NeuralNetwork:
         #
 
     #
-    
-    #*********************************************************************************************************#
-    
-    def getSummForHiddenUnit(self, hiddenUnit):
         
-        total = 0
-        edgeWeights = hiddenUnit.edgeWeights
-        numOutputUnits = len(self.outputUnits)
-        outputUnitErrors = [self.outputUnits[h].error for h in range(numOutputUnits)]
-        
-        for y in range(0, len(edgeWeights)):
-            product = edgeWeights[y] * outputUnitErrors[y]
-            total += product
-        #
-        
-        return total
-        
-    #
-    
     #*********************************************************************************************************#
 
+    #computes the error of a hidden unit and stores it in the hidden unit for every hidden unit in a neural network
     def updateHiddenUnitErrors(self):
 
         for x in range(0, len(self.hiddenUnits)):
-            total = NeuralNetwork.getSummForHiddenUnit(self, self.hiddenUnits[x])
+            
+            hiddenUnit = self.hiddenUnits[x]
+            total = 0
+            edgeWeights = hiddenUnit.edgeWeights
+            numOutputUnits = len(self.outputUnits)
+            outputUnitErrors = [self.outputUnits[h].error for h in range(numOutputUnits)]
+
+            for y in range(0, len(edgeWeights)):
+                product = edgeWeights[y] * outputUnitErrors[y]
+                total += product
+            #
+            
             output = self.hiddenUnits[x].output
             self.hiddenUnits[x].error = output * (1 - output) * total
+            
         #   
 
     #
     
     #*********************************************************************************************************#
     
+    #updates all the weights for a neural network
     def updateNetworkWeights(self):
         
         for x in range(0, len(self.inputUnits)): 
@@ -95,7 +108,13 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #used to perform back propagation
     def doBackwardPropagation(self, targetValues):
+        
+        '''
+        targetValues = a list of values that will be compared with outputs 
+        of all the output units in a neural network
+        '''
         
         NeuralNetwork.updateOutputUnitErrors(self, targetValues) 
         NeuralNetwork.updateHiddenUnitErrors(self)
@@ -105,7 +124,13 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #computes the output of a hidden unit and stores it in the hidden unit
     def updateOutputForHiddenUnit(self, index):
+        
+        '''
+        -> index is a number >= 0
+        -> Let's say we want to compute an output and store it in hidden unit #3. Then, index has to equal 2.
+        '''
         
         total = 0
         
@@ -123,7 +148,13 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #computes the output of an output unit and stores it in the output unit
     def updateOutputForOutputUnit(self, index):
+        
+        '''
+        -> index is a number >= 0
+        -> Let's say we want to compute an output and store it in output unit #3. Then, index has to equal 2.
+        '''
         
         total = 0
         
@@ -141,9 +172,15 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
-    def sigmoid(self, output):
+    #serves as a sigmoid function
+    def sigmoid(self, outputValue):
         
-        negatedOutput = -1 * output
+        '''
+        input: outputValue is a number representing the output of a unit in a neural network
+        output: a decimal between 0 and 1
+        '''
+        
+        negatedOutput = -1 * outputValue
         denominator = 1 + math.pow(math.e, negatedOutput)
         result = (1.0) / (1.0 * denominator)
             
@@ -153,6 +190,7 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
    
+    #used to perform forward propagation
     def doForwardPropagation(self, inputVector):
         
         for x in range(0, len(self.inputUnits)): 
@@ -174,6 +212,7 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #sets the input values, output and error of each unit in a neural network to zero
     def performCleanUp(self):
         
         itemsToClean = [self.inputUnits, self.hiddenUnits, self.outputUnits] 
