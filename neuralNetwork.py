@@ -215,27 +215,7 @@ class NeuralNetwork:
             self.outputUnits[x].output = NeuralNetwork.sigmoid(self, self.outputUnits[x].output) 
         #
         
-    #
-    
-    #*********************************************************************************************************#
-    
-    #TODO: edit, revise or add comments
-    
-    #gets rid of all garbage values stored in each unit of a neural network
-    def performCleanUp(self):
-        
-        itemsToClean = [self.inputUnits, self.hiddenUnits, self.outputUnits] 
-        
-        for h in range(0, len(itemsToClean)): 
-            item = itemsToClean[h] 
-            for x in range(0, len(item)): 
-                item[x].error = 0 
-                item[x].output = 0 
-                item[x].inputs = [0] * len(item[x].inputs) 
-            #
-        #
-        
-    #
+    #    
     
     #*********************************************************************************************************#
     
@@ -256,8 +236,17 @@ class NeuralNetwork:
         hiddenUnitOutputs = [self.hiddenUnits[x].output for x in range(numHiddenUnits)] 
         outputUnitOutputs = [self.outputUnits[x].output for x in range(numOutputUnits)] 
         array = [hiddenUnitOutputs, outputUnitOutputs] 
-        NeuralNetwork.doBackwardPropagation(self, outputVector) 
-        NeuralNetwork.performCleanUp(self) 
+        NeuralNetwork.doBackwardPropagation(self, outputVector)
+        itemsToClean = [self.inputUnits, self.hiddenUnits, self.outputUnits] 
+        
+        for h in range(0, len(itemsToClean)): 
+            item = itemsToClean[h] 
+            for x in range(0, len(item)): 
+                item[x].error = 0 
+                item[x].output = 0 
+                item[x].inputs = [0] * len(item[x].inputs) 
+            #
+        #
         
         return array
         
