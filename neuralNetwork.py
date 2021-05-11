@@ -38,6 +38,8 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #TODO: edit, revise, add comments
+    
     #computes the error for an output unit and stores it in the output unit for every output unit in a neural network
     def updateOutputUnitErrors(self, targetValues):
         
@@ -54,6 +56,8 @@ class NeuralNetwork:
     #
         
     #*********************************************************************************************************#
+    
+    #TODO: edit, revise, add comments
 
     #computes the error for a hidden unit and stores it in the hidden unit for every hidden unit in a neural network
     def updateHiddenUnitErrors(self):
@@ -125,12 +129,12 @@ class NeuralNetwork:
     
     #TODO: edit, revise, add comments
     
-    #computes the output of a hidden unit and stores it in the hidden unit
+    #computes the output of a hidden unit and stores it there
     def updateOutputForHiddenUnit(self, index):
         
         '''
         -> index is a number >= 0
-        -> Let's say we want to compute an output and store it in hidden unit #3. Then, index has to equal 2.
+        -> Let's say we want to work with hidden unit 3. Then, index has to equal 2.
         '''
         
         total = 0
@@ -149,12 +153,14 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
-    #computes the output of an output unit and stores it in the output unit
+    #TODO: edit, revise, add comments
+    
+    #computes the output of an output unit and stores it there
     def updateOutputForOutputUnit(self, index):
         
         '''
         -> index is a number >= 0
-        -> Let's say we want to compute an output and store it in output unit #3. Then, index has to equal 2.
+        -> Let's say we want to work with output unit 3. Then, index has to equal 2.
         '''
         
         total = 0
@@ -195,6 +201,10 @@ class NeuralNetwork:
     #used to perform forward propagation
     def doForwardPropagation(self, inputVector):
         
+        '''
+        inputVector: represents a list of values that will be fed to the input units
+        '''
+        
         for x in range(0, len(self.inputUnits)): 
             self.inputUnits[x].inputs = [inputVector[x]] * len(self.inputUnits[x].inputs) 
         #
@@ -214,6 +224,8 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #TODO: edit, revise, add comments
+    
     #sets the input values, output and error of each unit in a neural network to zero
     def performCleanUp(self):
         
@@ -232,12 +244,14 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
+    #TODO: edit, revise, add comments
+    
     #used to help a neural network learn from a training example
     def trainOnExample(self, inputVector, outputVector):
         
         '''
-        input: inputVector represents a list of numbers that will be fed to all the input units of a neural network, 
-        outputVector represents a list of values that should be outputted by all output units in a neural network
+        input: inputVector represents a list of numbers that will be fed to the input units, outputVector represents 
+        a list of values that should be outputted by the output units
         
         output: a list of the format [hiddenUnitOutputs, outputUnitOutputs], where hiddenUnitOutputs is a
         list of outputs for all hidden units in a neural network and outputUnitOutputs is a list of outputs
