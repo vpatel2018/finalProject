@@ -194,15 +194,17 @@ class NeuralNetwork:
     #TODO: test this function
     def trainOnExample(self, inputVector, outputVector):
         
-        NeuralNetwork.doForwardPropagation(self, inputVector)
-        hiddenUnits = [hiddenUnits[x].copy() for x in range(len(self.hiddenUnits))]
-        outputUnits = [outputUnits[x].copy() for x in range(len(self.outputUnits))]
-        array = [hiddenUnits, outputUnits]
-        NeuralNetwork.doBackwardPropagation(self, outputVector)
-        NeuralNetwork.performCleanUp(self)
+        NeuralNetwork.doForwardPropagation(self, inputVector) 
+        hiddenUnitOutputs = [self.hiddenUnits[x].output for x in range(len(self.hiddenUnits))] 
+        outputUnitOutputs = [self.outputUnits[x].output for x in range(len(self.outputUnits))] 
+        array = [hiddenUnitOutputs, outputUnitOutputs] 
+        NeuralNetwork.doBackwardPropagation(self, outputVector) 
+        NeuralNetwork.performCleanUp(self) 
         
         return array
         
     #
+    
+    #*********************************************************************************************************#
     
 #
