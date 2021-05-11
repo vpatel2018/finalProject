@@ -8,6 +8,6 @@ if __name__ == "__main__":
    lowerLimitForRandNums = -0.1
    upperLimitForRandNums = 0.1
    learningRate = 0.3
-   network = NeuralNetwork(numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate)
+   network = nn.NeuralNetwork(numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate)
    
 #
