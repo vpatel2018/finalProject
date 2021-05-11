@@ -134,7 +134,7 @@ class NeuralNetwork:
     def updateOutputForHiddenUnit(self, index):
         
         '''
-        index is a number >= 0 and it is used to refer to a certain hidden unit
+        index = a number >= 0, used to refer to some hidden unit
         '''
         
         total = 0
@@ -158,7 +158,7 @@ class NeuralNetwork:
     def updateOutputForOutputUnit(self, index):
         
         '''
-        index is a number >= 0 and it is used to refer to a certain output unit
+        index = a number >= 0, used to refer to some output unit
         '''
         
         total = 0
@@ -227,7 +227,7 @@ class NeuralNetwork:
         
         '''
         input: inputVector = list of numbers that will be fed to the input units, 
-        outputVector = list of values that should be outputted by the output units
+        outputVector = list of values that will be compared with the outputs of all output units
         
         output: a list of the format [hiddenUnitOutputs, outputUnitOutputs], where hiddenUnitOutputs is a
         list of outputs for all hidden units and outputUnitOutputs is a list of outputs for all output units
@@ -257,4 +257,4 @@ class NeuralNetwork:
     
     #*********************************************************************************************************#
     
-# 
+#
