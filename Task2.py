@@ -1,6 +1,8 @@
 import neuralNetwork as nn
 import math
 
+#TODO: test the code
+
 if __name__ == "__main__":
    
    numInputUnits = 8
@@ -34,8 +36,5 @@ if __name__ == "__main__":
        file = open(title, 'w')
        file.close()
    #
-   
-   #write code to deal with hidden unit encodings
-   #write code to deal with sum of squared errors
    
 #
