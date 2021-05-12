@@ -16,6 +16,8 @@ def createSSEFile():
    file.write(string)
    file.close()
     
+   return sseFile
+    
 #
 
 def createHiddenUnitEncodingFiles():
@@ -90,7 +92,7 @@ if __name__ == "__main__":
    #
    
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
-   createSSEFile()
+   sseFile = createSSEFile()
    hueFiles = createHiddenUnitEncodingFiles()
    numDigitsAfterDecimalPlace = 4
    
@@ -117,7 +119,6 @@ if __name__ == "__main__":
            errorsForEpoch.append(sumOfSquareErr)
        #
     
-       sseFile = 'SumOfSquaredErrors.csv'
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
    #
