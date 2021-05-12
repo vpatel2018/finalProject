@@ -1,5 +1,6 @@
 import neuralNetwork as nn
 import math
+import os
 
 #TODO: Do additional debugging if needed, check if requirements for task 2 are met, write comments
 
@@ -92,6 +93,10 @@ if __name__ == "__main__":
    createSSEFile()
    hueFiles = createHiddenUnitEncodingFiles()
    
+   os.system('rm D2/* > /dev/null 2>&1')
+   os.system('rm -d D2 > /dev/null 2>&1')
+   os.system('mkdir D2 > /dev/null 2>&1')
+   
    for x in range(0, epochs):
        
        outputUnitOutputsForEpoch = []
@@ -118,6 +123,13 @@ if __name__ == "__main__":
        sseFile = 'SumOfSquaredErrors.csv'
        appendListContentsToFile(sseFile, errorsForEpoch)
        
+   #
+   
+   os.system('mv SumOfSquaredErrors.csv D2/SumOfSquaredErrors.csv')
+   
+   for x in hueFiles:
+       command = 'mv ' + x + ' D2/' + x
+       os.system(command)
    #
 
 #
