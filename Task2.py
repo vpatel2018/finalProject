@@ -60,12 +60,12 @@ def computeSumOfSquareError(predictedValues, expectedValues):
        
 #
 
-def appendListContentsToFile(fileName, array):
+def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
  
     file = open(fileName, 'a')
     string = ""
     for z in array:
-        string += (str(z) + ',')   
+        string += (str(z)[0: numDigitsAfterDecimalPlace + str(z).find('.') + 1] + ',')   
     #
     string = string[0: len(string) - 1] + '\n'
     file.write(string)
@@ -92,6 +92,7 @@ if __name__ == "__main__":
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
    createSSEFile()
    hueFiles = createHiddenUnitEncodingFiles()
+   numDigitsAfterDecimalPlace = 4
    
    os.system('rm D2/* > /dev/null 2>&1')
    os.system('rm -d D2 > /dev/null 2>&1')
@@ -103,7 +104,7 @@ if __name__ == "__main__":
        
        for y in range(0, len(trainingSet)):
            array = network.trainOnExample(trainingSet[y][0], trainingSet[y][1])         
-           appendListContentsToFile(hueFiles[y], array[0])
+           appendListContentsToFile(hueFiles[y], array[0], numDigitsAfterDecimalPlace)
            outputUnitOutputsForEpoch.append(array[1])
        #
        
@@ -117,7 +118,7 @@ if __name__ == "__main__":
        #
     
        sseFile = 'SumOfSquaredErrors.csv'
-       appendListContentsToFile(sseFile, errorsForEpoch)
+       appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
    #
    
