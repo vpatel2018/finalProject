@@ -101,6 +101,7 @@ if __name__ == "__main__":
 
            outputUnitOutputs = array[1]
            outputUnitOutputsForEpoch.append(outputUnitOutputs)
+            
        #
        
        errorsForEpoch = []
