@@ -59,6 +59,19 @@ def computeSumOfSquareError(predictedValues, expectedValues):
        
 #
 
+def appendListContentsToFile(fileName, array):
+ 
+    file = open(fileName, 'a')
+    string = ""
+    for z in array:
+        string += (str(z) + ',')   
+    #
+    string = string[0: len(string) - 1] + '\n'
+    file.write(string)
+    file.close()
+    
+#
+
 if __name__ == "__main__":
    
    numInputUnits = 8
@@ -84,50 +97,26 @@ if __name__ == "__main__":
        outputUnitOutputsForEpoch = []
        
        for y in range(0, len(trainingSet)):
-
            inputForNN = trainingSet[y][0]
            expectedOutput = trainingSet[y][1]
            array = network.trainOnExample(inputForNN, expectedOutput)
-           hiddenUnitOutputs = array[0]
-
-           file = open(hueFiles[y], 'a')
-           string = ""
-           for z in hiddenUnitOutputs:
-               string += (str(z) + ',')   
-           #
-           string = string[0: len(string) - 1] + '\n'
-           file.write(string)
-           file.close()
-
+           hiddenUnitOutputs = array[0]            
+           appendListContentsToFile(hueFiles[y], hiddenUnitOutputs)
            outputUnitOutputs = array[1]
            outputUnitOutputsForEpoch.append(outputUnitOutputs)
-            
        #
        
        errorsForEpoch = []
        
        for y in range(0, len(outputUnitOutputsForEpoch[0])):
-           predictedValues = []
-           expectedValues = []
-           for z in range(0, len(outputUnitOutputsForEpoch)):
-               value = outputUnitOutputsForEpoch[z][y]
-               predictedValues.append(value)
-               value = vectors[z][y]
-               expectedValues.append(value)
-           #
+           predictedValues = [outputUnitOutputsForEpoch[z][y] for z in range(len(outputUnitOutputsForEpoch))]
+           expectedValues = [vectors[z][y] for z in range(len(outputUnitOutputsForEpoch))]
            sumOfSquareErr = computeSumOfSquareError(predictedValues, expectedValues)
            errorsForEpoch.append(sumOfSquareErr)
        #
-       
+    
        sseFile = 'SumOfSquaredErrors.csv'
-       file = open(sseFile, 'a')
-       string = ""
-       for y in errorsForEpoch:
-           string += (str(y) + ',')
-       #
-       string = string[0:len(string) - 1] + '\n'
-       file.write(string)
-       file.close()
+       appendListContentsToFile(sseFile, errorsForEpoch)
        
    #
 
