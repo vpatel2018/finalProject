@@ -37,4 +37,8 @@ if __name__ == "__main__":
        file.close()
    #
    
+   for x in trainingSet:
+       print(x)   
+   #
+   
 #
