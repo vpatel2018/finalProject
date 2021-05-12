@@ -102,13 +102,9 @@ if __name__ == "__main__":
        outputUnitOutputsForEpoch = []
        
        for y in range(0, len(trainingSet)):
-           inputForNN = trainingSet[y][0]
-           expectedOutput = trainingSet[y][1]
-           array = network.trainOnExample(inputForNN, expectedOutput)
-           hiddenUnitOutputs = array[0]            
-           appendListContentsToFile(hueFiles[y], hiddenUnitOutputs)
-           outputUnitOutputs = array[1]
-           outputUnitOutputsForEpoch.append(outputUnitOutputs)
+           array = network.trainOnExample(trainingSet[y][0], trainingSet[y][1])         
+           appendListContentsToFile(hueFiles[y], array[0])
+           outputUnitOutputsForEpoch.append(array[1])
        #
        
        errorsForEpoch = []
