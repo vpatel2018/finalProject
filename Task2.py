@@ -35,4 +35,7 @@ if __name__ == "__main__":
        file.close()
    #
    
+   #write code to deal with hidden unit encodings
+   #write code to deal with sum of squared errors
+   
 #
