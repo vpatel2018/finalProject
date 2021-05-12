@@ -11,7 +11,7 @@ if __name__ == "__main__":
    lowerLimitForRandNums = -0.1
    upperLimitForRandNums = 0.1
    learningRate = 0.3
-   epochs = 5000
+   epochs = 10
    network = nn.NeuralNetwork(numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate)
    vectors = [[0] * 8 for x in range(8)]
 
@@ -19,9 +19,15 @@ if __name__ == "__main__":
        vectors[x][x] = 1
    #
    
-   trainingSet = [[vectors[x], vectors[x]] for x in range(8)]
+   trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
    sseFile = 'SumOfSquaredErrors.csv'
    file = open(sseFile, 'w')
+   string = ""
+   for x in range(0, 8):
+       string += ('SSE_output_unit' + str(x + 1) + ',')   
+   #
+   string = string[0:len(string) - 1] + '\n'
+   file.write(string)
    file.close()
    hiddenUnitEncodingFiles = []
    
@@ -34,11 +40,8 @@ if __name__ == "__main__":
        title = 'HiddenUnitEncoding_' + word + '.csv'
        hiddenUnitEncodingFiles.append(title)
        file = open(title, 'w')
+       file.write('HiddenUnit1Encoding,HiddenUnit2Encoding,HiddenUnit3Encoding\n')
        file.close()
-   #
-   
-   for x in trainingSet:
-       print(x)   
    #
    
 #
