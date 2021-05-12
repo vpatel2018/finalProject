@@ -1,7 +1,40 @@
 import neuralNetwork as nn
 import math
 
-#TODO: check if the files created  meet the requirements for task 2
+#TODO: Check if the files produced meet the requirements for task 2
+
+def createSSEFile():
+    
+   sseFile = 'SumOfSquaredErrors.csv'
+   file = open(sseFile, 'w')
+   string = ""
+   for x in range(0, 8):
+       string += ('SSE_output_unit' + str(x + 1) + ',')   
+   #
+   string = string[0:len(string) - 1] + '\n'
+   file.write(string)
+   file.close()
+    
+#
+
+def createHiddenUnitEncodingFiles(vectors):
+    
+   hiddenUnitEncodingFiles = []
+   
+   for x in range(0, 8):
+       word = ''
+       for y in range(0, len(vectors[x])):
+           vectors[x][y] = str(vectors[x][y])
+       #
+       word = word.join(vectors[x])
+       title = 'HiddenUnitEncoding_' + word + '.csv'
+       hiddenUnitEncodingFiles.append(title)
+       file = open(title, 'w')
+       file.write('HiddenUnit1Encoding,HiddenUnit2Encoding,HiddenUnit3Encoding\n')
+       file.close()
+   #
+    
+#
 
 if __name__ == "__main__":
    
@@ -20,28 +53,7 @@ if __name__ == "__main__":
    #
    
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
-   sseFile = 'SumOfSquaredErrors.csv'
-   file = open(sseFile, 'w')
-   string = ""
-   for x in range(0, 8):
-       string += ('SSE_output_unit' + str(x + 1) + ',')   
-   #
-   string = string[0:len(string) - 1] + '\n'
-   file.write(string)
-   file.close()
-   hiddenUnitEncodingFiles = []
-   
-   for x in range(0, 8):
-       word = ''
-       for y in range(0, len(vectors[x])):
-           vectors[x][y] = str(vectors[x][y])
-       #
-       word = word.join(vectors[x])
-       title = 'HiddenUnitEncoding_' + word + '.csv'
-       hiddenUnitEncodingFiles.append(title)
-       file = open(title, 'w')
-       file.write('HiddenUnit1Encoding,HiddenUnit2Encoding,HiddenUnit3Encoding\n')
-       file.close()
-   #
+   createSSEFile()
+   createHiddenUnitEncodingFiles(vectors)
 
 #
