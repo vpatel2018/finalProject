@@ -39,7 +39,9 @@ def createHiddenUnitEncodingFiles():
        file.write('HiddenUnit1Encoding,HiddenUnit2Encoding,HiddenUnit3Encoding\n')
        file.close()
    #
-    
+   
+   return hiddenUnitEncodingFiles
+
 #
 
 if __name__ == "__main__":
@@ -60,6 +62,6 @@ if __name__ == "__main__":
    
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
    createSSEFile()
-   createHiddenUnitEncodingFiles()
+   hueFiles = createHiddenUnitEncodingFiles()
 
 #
