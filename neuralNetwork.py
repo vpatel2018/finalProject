@@ -10,7 +10,7 @@ class Neuron:
         self.output = output #represents output for a unit in a neural network
     # 
 #
-
+ 
 class NeuralNetwork:
     
     #*********************************************************************************************************#
@@ -66,7 +66,7 @@ class NeuralNetwork:
             hiddenUnit = self.hiddenUnits[x]
             edgeWeights = hiddenUnit.edgeWeights
             numOutputUnits = len(self.outputUnits)
-            outputUnitErrors = [self.outputUnits[h].error for h in range(numOutputUnits)]
+            outputUnitErrors = [self.outputUnits[h].error.copy() for h in range(numOutputUnits)]
             
             total = 0
 
@@ -119,7 +119,7 @@ class NeuralNetwork:
         all the output units in a neural network
         '''
         
-        NeuralNetwork.updateOutputUnitErrors(self, targetValues) 
+        NeuralNetwork.updateOutputUnitErrors(self, targetValues.copy()) 
         NeuralNetwork.updateHiddenUnitErrors(self)
         NeuralNetwork.updateNetworkWeights(self)
         
@@ -202,18 +202,18 @@ class NeuralNetwork:
         '''
         
         for x in range(0, len(self.inputUnits)): 
-            self.inputUnits[x].inputs = [inputVector[x]] * len(self.inputUnits[x].inputs) 
+            self.inputUnits[x].inputs = [inputVector[x].copy()] * len(self.inputUnits[x].inputs) 
         #
         
         for x in range(0, len(self.hiddenUnits)): 
-            NeuralNetwork.updateOutputForHiddenUnit(self, x) 
-            self.hiddenUnits[x].output = NeuralNetwork.sigmoid(self, self.hiddenUnits[x].output) 
-            self.hiddenUnits[x].inputs = [self.hiddenUnits[x].output] * len(self.hiddenUnits[x].inputs) 
+            NeuralNetwork.updateOutputForHiddenUnit(self, x.copy()) 
+            self.hiddenUnits[x].output = NeuralNetwork.sigmoid(self, self.hiddenUnits[x].output.copy()) 
+            self.hiddenUnits[x].inputs = [self.hiddenUnits[x].output.copy()] * len(self.hiddenUnits[x].inputs) 
         #
         
         for x in range(0, len(self.outputUnits)): 
-            NeuralNetwork.updateOutputForOutputUnit(self, x) 
-            self.outputUnits[x].output = NeuralNetwork.sigmoid(self, self.outputUnits[x].output) 
+            NeuralNetwork.updateOutputForOutputUnit(self, x.copy()) 
+            self.outputUnits[x].output = NeuralNetwork.sigmoid(self, self.outputUnits[x].output.copy()) 
         #
         
     #    
@@ -231,13 +231,13 @@ class NeuralNetwork:
         list of outputs for all hidden units and outputUnitOutputs is a list of outputs for all output units
         '''
         
-        NeuralNetwork.doForwardPropagation(self, inputVector) 
+        NeuralNetwork.doForwardPropagation(self, inputVector.copy()) 
         numHiddenUnits = len(self.hiddenUnits) 
         numOutputUnits = len(self.outputUnits) 
-        hiddenUnitOutputs = [self.hiddenUnits[x].output for x in range(numHiddenUnits)] 
-        outputUnitOutputs = [self.outputUnits[x].output for x in range(numOutputUnits)] 
+        hiddenUnitOutputs = [self.hiddenUnits[x].output.copy() for x in range(numHiddenUnits)] 
+        outputUnitOutputs = [self.outputUnits[x].output.copy() for x in range(numOutputUnits)] 
         array = [hiddenUnitOutputs, outputUnitOutputs] 
-        NeuralNetwork.doBackwardPropagation(self, outputVector)
+        NeuralNetwork.doBackwardPropagation(self, outputVector.copy())
         itemsToClean = [self.inputUnits, self.hiddenUnits, self.outputUnits] 
         
         for h in range(0, len(itemsToClean)): 
