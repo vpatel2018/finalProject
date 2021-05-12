@@ -18,5 +18,21 @@ if __name__ == "__main__":
    #
    
    trainingSet = [[vectors[x], vectors[x]] for x in range(8)]
+   sseFile = 'SumOfSquaredErrors.csv'
+   file = open(sseFile, 'w')
+   file.close()
+   hiddenUnitEncodingFiles = []
+   
+   for x in range(0, 8):
+       word = ''
+       for y in range(0, len(vectors[x])):
+           vectors[x][y] = str(vectors[x][y])
+       #
+       word = word.join(vectors[x])
+       title = 'HiddenUnitEncoding_' + word + '.csv'
+       hiddenUnitEncodingFiles.append(title)
+       file = open(title, 'w')
+       file.close()
+   #
    
 #
