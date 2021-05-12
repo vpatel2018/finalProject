@@ -17,7 +17,13 @@ def createSSEFile():
     
 #
 
-def createHiddenUnitEncodingFiles(vectors):
+def createHiddenUnitEncodingFiles():
+    
+   vectors = [[0] * 8 for x in range(8)]
+
+   for x in range(0, 8):
+       vectors[x][x] = 1
+   #
     
    hiddenUnitEncodingFiles = []
    
@@ -54,6 +60,6 @@ if __name__ == "__main__":
    
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
    createSSEFile()
-   createHiddenUnitEncodingFiles(vectors)
+   createHiddenUnitEncodingFiles()
 
 #
