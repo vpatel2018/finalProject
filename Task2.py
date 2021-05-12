@@ -1,7 +1,7 @@
 import neuralNetwork as nn
 import math
 
-#TODO: Check if the files produced meet the requirements for task 2
+#TODO: Do additional debugging if needed, check if requirements for task 2 are met, write comments
 
 def createSSEFile():
     
@@ -44,6 +44,21 @@ def createHiddenUnitEncodingFiles():
 
 #
 
+def computeSumOfSquareError(predictedValues, expectedValues):
+    
+    sumOfSquareErrors = 0
+    
+    for x in range(0, len(predictedValues)):
+        value1 = predictedValues[x]
+        value2 = expectedValues[x]
+        difference = value2 - value1
+        sumOfSquareErrors = sumOfSquareErrors + math.pow(difference, 2)
+    #
+    
+    return sumOfSquareErrors
+       
+#
+
 if __name__ == "__main__":
    
    numInputUnits = 8
@@ -63,5 +78,56 @@ if __name__ == "__main__":
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
    createSSEFile()
    hueFiles = createHiddenUnitEncodingFiles()
+   
+   for x in range(0, epochs):
+       
+       outputUnitOutputsForEpoch = []
+       
+       for y in range(0, len(trainingSet)):
+
+           inputForNN = trainingSet[y][0]
+           expectedOutput = trainingSet[y][1]
+           array = network.trainOnExample(inputForNN, expectedOutput)
+           hiddenUnitOutputs = array[0]
+
+           file = open(hueFiles[y], 'a')
+           string = ""
+           for z in hiddenUnitOutputs:
+               string += (str(z) + ',')   
+           #
+           string = string[0: len(string) - 1] + '\n'
+           file.write(string)
+           file.close()
+
+           outputUnitOutputs = array[1]
+           outputUnitOutputsForEpoch.append(outputUnitOutputs)
+       #
+       
+       errorsForEpoch = []
+       
+       for y in range(0, len(outputUnitOutputsForEpoch[0])):
+           predictedValues = []
+           expectedValues = []
+           for z in range(0, len(outputUnitOutputsForEpoch)):
+               value = outputUnitOutputsForEpoch[z][y]
+               predictedValues.append(value)
+               value = vectors[z][y]
+               expectedValues.append(value)
+           #
+           sumOfSquareErr = computeSumOfSquareError(predictedValues, expectedValues)
+           errorsForEpoch.append(sumOfSquareErr)
+       #
+       
+       sseFile = 'SumOfSquaredErrors.csv'
+       file = open(sseFile, 'a')
+       string = ""
+       for y in errorsForEpoch:
+           string += (str(y) + ',')
+       #
+       string = string[0:len(string) - 1] + '\n'
+       file.write(string)
+       file.close()
+       
+   #
 
 #
