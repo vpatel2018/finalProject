@@ -1,6 +1,8 @@
 import neuralNetwork as nn
 import math
 
+#TODO: check if the files created  meet the requirements for task 2
+
 if __name__ == "__main__":
    
    numInputUnits = 8
