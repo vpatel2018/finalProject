@@ -53,10 +53,7 @@ def computeSumOfSquareError(predictedValues, expectedValues):
     sumOfSquareErrors = 0
     
     for x in range(0, len(predictedValues)):
-        value1 = predictedValues[x]
-        value2 = expectedValues[x]
-        difference = value2 - value1
-        sumOfSquareErrors = sumOfSquareErrors + math.pow(difference, 2)
+        sumOfSquareErrors += math.pow(expectedValues[x] - predictedValues[x], 2)
     #
     
     return sumOfSquareErrors
