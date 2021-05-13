@@ -75,6 +75,19 @@ def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
     
 #
 
+def appendListContentsToFile2(fileName, array):
+    
+    file = open(fileName, 'a')
+    string = ""
+    for z in array:
+        string += (str(z) + ',')   
+    #
+    string = string[0: len(string) - 1] + '\n'
+    file.write(string)
+    file.close()
+    
+#
+
 if __name__ == "__main__":
    
    numInputUnits = 8
@@ -115,7 +128,7 @@ if __name__ == "__main__":
        
        for y in range(0, len(trainingSet)):
            array = network.trainOnExample(trainingSet[y][0], trainingSet[y][1])         
-           appendListContentsToFile(hueFiles[y], array[0], numDigitsAfterDecimalPlace)
+           appendListContentsToFile2(hueFiles[y], array[0])
            outputUnitOutputsForEpoch.append(array[1])
        #
        
