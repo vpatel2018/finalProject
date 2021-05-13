@@ -93,33 +93,6 @@ def hidden_unit_encodings(path_in, path_out, name):
 	ax.set_title(f'Hidden Unit Encoding for Input {name}')
 	ax.figure.savefig(path_out)
 
-def test_sum_of_squared_errors():
-	"""
-	Testing function.
-	"""
-
-	path_in = 'test_in_sum_of_squared_errors.csv'
-	path_out = 'test_out_sum_of_squared_errors.png'
-
-	df = pd.DataFrame(np.random.rand(5000, 8))
-	df.to_csv(path_in, header=False, index=False)
-
-	sum_of_squared_errors(path_in=path_in, path_out=path_out)
-
-def test_hidden_unit_encodings():
-	"""
-	Testing function.
-	"""
-
-	path_in = 'test_in_hidden_unit_encodings.csv'
-	path_out = 'test_out_hidden_unit_encodings.png'
-	name = 'name'
-
-	df = pd.DataFrame(np.random.rand(5000, 3))
-	df.to_csv(path_in, header=False, index=False)
-
-	hidden_unit_encodings(path_in=path_in, path_out=path_out, name=name)
-
 def main():
 	"""
 	Produce the required plots.
@@ -141,6 +114,5 @@ def main():
 		)
 
 if __name__ == "__main__":
-	#test_sum_of_squared_errors()
-	#test_hidden_unit_encodings()
+
 	main()
