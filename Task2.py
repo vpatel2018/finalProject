@@ -2,7 +2,7 @@ import neuralNetwork as nn
 import math
 import os
 
-#TODO: Do additional debugging if needed, check if requirements for task 2 are met, write comments
+#TODO: check if requirements for task 2 are met, write comments
 
 def createSSEFile():
     
@@ -47,6 +47,7 @@ def createHiddenUnitEncodingFiles():
 
 #
 
+#TODO: verify correctness of this function
 def computeSumOfSquareError(predictedValues, expectedValues):
     
     sumOfSquareErrors = 0
@@ -62,6 +63,7 @@ def computeSumOfSquareError(predictedValues, expectedValues):
        
 #
 
+#TODO: verify correctness of this function
 def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
  
     file = open(fileName, 'a')
@@ -75,6 +77,7 @@ def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
     
 #
 
+#TODO: verify correctness of this function
 def appendListContentsToFile2(fileName, array):
     
     file = open(fileName, 'a')
@@ -131,6 +134,10 @@ if __name__ == "__main__":
            outputUnitOutputsForEpoch.append(array[1])
        #
        
+       #************************************************************************************
+       
+       #TODO: verify correctness of the code below
+       
        errorsForEpoch = []
        numOfCols = len(outputUnitOutputsForEpoch[0])
        numOfRows = len(outputUnitOutputsForEpoch)
@@ -145,6 +152,8 @@ if __name__ == "__main__":
        numDigitsAfterDecimalPlace = 4
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
+       #************************************************************************************
+       
    #
    
    os.system('mv SumOfSquaredErrors.csv D2/SumOfSquaredErrors.csv')
@@ -154,4 +163,4 @@ if __name__ == "__main__":
        os.system(command)
    #
 
-# 
+#
