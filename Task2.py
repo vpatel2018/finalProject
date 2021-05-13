@@ -73,7 +73,6 @@ def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
     
 #
 
-#TODO: verify correctness of this function
 def appendListContentsToFile2(fileName, array):
     
     file = open(fileName, 'a')
