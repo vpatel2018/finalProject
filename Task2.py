@@ -118,6 +118,8 @@ if __name__ == "__main__":
            appendListContentsToFile(hueFiles[y], array[0], numDigitsAfterDecimalPlace)
            outputUnitOutputsForEpoch.append(array[1])
        #
+    
+       # 👍🏿👍🏿👍🏿👍🏿
        
        errorsForEpoch = []
        
