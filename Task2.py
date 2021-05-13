@@ -140,13 +140,8 @@ if __name__ == "__main__":
        numOfRows = len(outputUnitOutputsForEpoch)
        
        for y in range(0, numOfCols):
-            
-           #****************************************************************************
-           #TODO: verify correctness of the code below
            predictedValues = [outputUnitOutputsForEpoch[z][y] for z in range(numOfRows)]
            expectedValues = [vectors[z][y] for z in range(numOfRows)]
-           #****************************************************************************
-        
            sumOfSquareErr = computeSumOfSquareError(predictedValues, expectedValues)
            errorsForEpoch.append(sumOfSquareErr)
        #
