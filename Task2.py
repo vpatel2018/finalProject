@@ -107,7 +107,6 @@ if __name__ == "__main__":
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
    sseFile = createSSEFile()
    hueFiles = createHiddenUnitEncodingFiles()
-   numDigitsAfterDecimalPlace = 4
     
    print('D = {', end='')
 
@@ -143,6 +142,7 @@ if __name__ == "__main__":
            errorsForEpoch.append(sumOfSquareErr)
        #
     
+       numDigitsAfterDecimalPlace = 4
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
    #
