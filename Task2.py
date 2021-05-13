@@ -113,7 +113,6 @@ if __name__ == "__main__":
    print('NETWORK ARCHITECTURE =', numInputUnits, 'x', numHiddenUnits, 'x', numOutputUnits)
    print('LEARNING RATE =', learningRate)
    print()
-   print()
    print('D = {', end='')
    for x in range(0, len(trainingSet) - 1):
        print(trainingSet[x])    
