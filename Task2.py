@@ -122,10 +122,12 @@ if __name__ == "__main__":
        # 👍🏿👍🏿👍🏿👍🏿
        
        errorsForEpoch = []
+       numOfCols = len(outputUnitOutputsForEpoch[0])
+       numOfRows = len(outputUnitOutputsForEpoch)
        
-       for y in range(0, len(outputUnitOutputsForEpoch[0])):
-           predictedValues = [outputUnitOutputsForEpoch[z][y] for z in range(len(outputUnitOutputsForEpoch))]
-           expectedValues = [vectors[z][y] for z in range(len(outputUnitOutputsForEpoch))]
+       for y in range(0, numOfCols):
+           predictedValues = [outputUnitOutputsForEpoch[z][y] for z in range(numOfRows)]
+           expectedValues = [vectors[z][y] for z in range(numOfRows)]
            sumOfSquareErr = computeSumOfSquareError(predictedValues, expectedValues)
            errorsForEpoch.append(sumOfSquareErr)
        #
