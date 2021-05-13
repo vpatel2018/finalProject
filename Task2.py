@@ -95,6 +95,14 @@ if __name__ == "__main__":
    sseFile = createSSEFile()
    hueFiles = createHiddenUnitEncodingFiles()
    numDigitsAfterDecimalPlace = 4
+    
+   print('D = {', end='')
+
+   for x in trainingSet:
+       print(x)    
+   #
+
+   print('}', end='')
    
    os.system('rm D2/* > /dev/null 2>&1')
    os.system('rm -d D2 > /dev/null 2>&1')
