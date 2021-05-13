@@ -98,11 +98,12 @@ if __name__ == "__main__":
     
    print('D = {', end='')
 
-   for x in trainingSet:
-       print(x)    
+   for x in range(0, len(trainingSet) - 1):
+       print(trainingSet[x])    
    #
 
-   print('}', end='')
+   print(trainingSet[len(trainingSet) - 1], end='}')
+   print()
    
    os.system('rm D2/* > /dev/null 2>&1')
    os.system('rm -d D2 > /dev/null 2>&1')
@@ -138,4 +139,4 @@ if __name__ == "__main__":
        os.system(command)
    #
 
-#
+# 
