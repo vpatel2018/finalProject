@@ -108,6 +108,10 @@ if __name__ == "__main__":
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
    sseFile = createSSEFile()
    hueFiles = createHiddenUnitEncodingFiles()
+
+   print()
+   print('NETWORK ARCHITECTURE =', numInputUnits, 'x', numHiddenUnits, 'x', numOutputUnits)
+   print('LEARNING RATE =', learningRate)
     
    print('D = {', end='')
 
