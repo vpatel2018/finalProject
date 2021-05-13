@@ -150,10 +150,10 @@ if __name__ == "__main__":
            errorsForEpoch.append(sumOfSquareErr)
        #
     
+       #************************************************************************************
+    
        numDigitsAfterDecimalPlace = 4
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
-       
-       #************************************************************************************
        
    #
    
