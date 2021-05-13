@@ -59,13 +59,16 @@ def computeSumOfSquareError(predictedValues, expectedValues):
        
 #
 
-#TODO: verify correctness of this function
 def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
  
     file = open(fileName, 'a')
     string = ""
     for z in array:
-        string += (str(z)[0: numDigitsAfterDecimalPlace + str(z).find('.') + 1] + ',')   
+        if(numDigitsAfterDecimalPlace == 0):
+          string += (str(z)[0: str(z).find('.')] + ',')
+        else:
+          string += (str(z)[0: numDigitsAfterDecimalPlace + str(z).find('.') + 1] + ',')      
+        #
     #
     string = string[0: len(string) - 1] + '\n'
     file.write(string)
