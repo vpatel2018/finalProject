@@ -135,13 +135,13 @@ if __name__ == "__main__":
            outputUnitOutputsForEpoch.append(array[1])
        #
        
-       #************************************************************************************
-       
-       #TODO: verify correctness of the code below
-       
        errorsForEpoch = []
        numOfCols = len(outputUnitOutputsForEpoch[0])
        numOfRows = len(outputUnitOutputsForEpoch)
+    
+       #************************************************************************************
+       
+       #TODO: verify correctness of the code below
        
        for y in range(0, numOfCols):
            predictedValues = [outputUnitOutputsForEpoch[z][y] for z in range(numOfRows)]
