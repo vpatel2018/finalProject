@@ -112,14 +112,14 @@ if __name__ == "__main__":
    print()
    print('NETWORK ARCHITECTURE =', numInputUnits, 'x', numHiddenUnits, 'x', numOutputUnits)
    print('LEARNING RATE =', learningRate)
-    
+   print()
+   print()
    print('D = {', end='')
-
    for x in range(0, len(trainingSet) - 1):
        print(trainingSet[x])    
    #
-
    print(trainingSet[len(trainingSet) - 1], end='}')
+   print()
    print()
    
    os.system('rm D2/* > /dev/null 2>&1')
