@@ -47,7 +47,6 @@ def createHiddenUnitEncodingFiles():
 
 #
 
-#TODO: verify correctness of this function
 def computeSumOfSquareError(predictedValues, expectedValues):
     
     sumOfSquareErrors = 0
