@@ -12,10 +12,8 @@
 
 # Deliverables
 - D1 : the codebase itself
-- D2.HiddenUnitEncoding.*.csv : Hidden Unit Encodings file
-- D2.SumOfSquaredErros.csv : Sum of Squared Errors file
-- D3.HiddenUnitEncoding.*.png : Hidden Unit Encodings plots
-- D2.SumOfSquaredErros.png : Sum of Squared Errors plot
-- D4.HiddenRepresentations.csv : Hidden Representations file
+- D2 : directory containing csv files with hidden unit encodings and sum of squared errors per epoch
+- D3 : directory containing csv files with plots of hidden unit encodings and sum of squared errors per epoch
+- D4.HiddenRepresentations.csv : hidden Representations file
 - D4.pdf : Analysis for task 4
 - D5.pdf : Project Reflection
