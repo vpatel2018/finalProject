@@ -8,7 +8,6 @@ A basic neural network implementation and performance analysis that includes con
 - > python3 Task2.py
 
 # We already include plots from the produced csv files, so you do not need to do worry about running plotting.py, which requires the third party pandas library.
-- > python3 plotting.py
 
 # Deliverables
 - D1 : the codebase itself
