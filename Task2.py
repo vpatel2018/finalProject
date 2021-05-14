@@ -132,24 +132,47 @@ def appendListContentsToFile2(fileName, array):
 
 if __name__ == "__main__":
    
+   #represents number of input units for a neural network
    numInputUnits = 8
+
+   #represents number of hidden units for a neural network
    numHiddenUnits = 3
+
+   #represents number of output units for a neural network
    numOutputUnits = 8
+
+   #minimum value for initial values of neural network weights
    lowerLimitForRandNums = -0.09999999999999999
+
+   #maximum value for initial values of neural network weights
    upperLimitForRandNums = 0.09999999999999999
+
+   #represents learning rate for neural network
    learningRate = 0.3
+
+   #represents number of epochs of learning that have to be done
    epochs = 5000
+
+   #represents neural network we will use for learning
    network = nn.NeuralNetwork(numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate)
+
+   #represents list of all input vectors for task 2
    vectors = [[0] * 8 for x in range(8)]
 
    for x in range(0, 8):
        vectors[x][x] = 1
    #
    
+   #represents training set
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
+    
+   #represents name of sum of squared errors file that will be produced
    sseFile = createSSEFile()
+    
+   #contains names of hidden unit encoding files that will be produced
    hueFiles = createHiddenUnitEncodingFiles()
 
+   #print information about training set, neural network architecture used, and learning rate for neural network
    print()
    print('NETWORK ARCHITECTURE =', numInputUnits, 'x', numHiddenUnits, 'x', numOutputUnits)
    print('LEARNING RATE =', learningRate)
@@ -162,20 +185,25 @@ if __name__ == "__main__":
    print()
    print()
    
+   #create a new folder called D2
    os.system('rm D2/* > /dev/null 2>&1')
    os.system('rm -d D2 > /dev/null 2>&1')
    os.system('mkdir D2 > /dev/null 2>&1')
    
+   #perform 5000 epochs of learning
    for x in range(0, epochs):
        
+       #used to store the outputs of all output units for each training example
        outputUnitOutputsForEpoch = []
-       
+ 
+       #(WRITE COMMENT)
        for y in range(0, len(trainingSet)):
            array = network.trainOnExample(trainingSet[y][0], trainingSet[y][1])         
            appendListContentsToFile2(hueFiles[y], array[0])
            outputUnitOutputsForEpoch.append(array[1])
        #
        
+       #(WRITE COMMENT)
        errorsForEpoch = []
        numOfCols = len(outputUnitOutputsForEpoch[0])
        numOfRows = len(outputUnitOutputsForEpoch)
@@ -187,11 +215,13 @@ if __name__ == "__main__":
            errorsForEpoch.append(sumOfSquareErr)
        #
        
+       #(WRITE COMMENT)
        numDigitsAfterDecimalPlace = 4
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
    #
    
+   #make sure SumOfSquaredErrors.csv and all hidden unit encoding files produced are placed in D2
    os.system('mv SumOfSquaredErrors.csv D2/SumOfSquaredErrors.csv')
    
    for x in hueFiles:
