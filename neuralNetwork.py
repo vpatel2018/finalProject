@@ -1,3 +1,7 @@
+#Authors: # Authors: Lana Abdelmohsen, Amulya Badineni, Luke Kurlandski, Vihan Patel
+# Filename: neuralNetwork.py 
+# Description: Has the neuron class which is vital for training our multilayer neural network, calculating errors and outputs for hidden and output units. 
+
 import random
 import math
 
