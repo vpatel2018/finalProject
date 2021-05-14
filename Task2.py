@@ -116,7 +116,10 @@ def appendListContentsToFile2(fileName, array):
     array -> represents list of values we have to include when writing a new line in a csv file
     '''
     
+    #open a csv file
     file = open(fileName, 'a')
+    
+    #write a new line in a csv file
     string = ""
     for z in array:
         string += (str(z) + ',')   
