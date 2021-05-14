@@ -71,19 +71,6 @@ def hidden_unit_encodings(path_in, path_out, name):
 			HiddenUnit1Encoding, HiddenUnit2Encoding, HiddenUnit3Encoding
 	"""
 
-	"""
-	colnames = [f'hidden unit encoding {i}' for i in range(1,4)]
-	df = pd.read_csv(path_in, header=None, names=colnames)
-	df['epoch'] = df.index
-
-	ax = df.plot.line(x='epoch', y=colnames)
-
-	ax.set_xlabel('epoch')
-	ax.set_ylabel('values emitted by hidden units')
-	ax.set_title(f'Hidden Unit Encoding for Input {name}')
-	ax.figure.savefig(path_out)
-	"""
-
 	df = pd.read_csv(path_in, header=0, names=[f'hidden unit {i}' for i in range(1,4)])
 	df['epoch'] = df.index
 
