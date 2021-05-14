@@ -14,6 +14,3 @@ A basic neural network implementation and performance analysis that includes con
 - neuralNetwork.py - (WRITE DESCRIPTION)
 - D2 : folder containing files required for D2
 - D3 : folder containing plots required for D3
-- D4.HiddenRepresentations.csv : hidden Representations file
-- D4.pdf : written analysis needed for D4
-- D5.pdf : reflection needed for D5
