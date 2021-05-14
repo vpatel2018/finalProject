@@ -1,33 +1,41 @@
 1. What was easy about this assignment?
-- None
 
+- None
+********************************************************************************************************
 2. What was challenging about this assignment, or parts that you couldn’t get working correctly?
+
 - We had difficulty figuring out how to create a class for a neural network. Also, we were confused
   as to how to compute the error and output of the output and hidden units.
-
+********************************************************************************************************
 3. What did you like about this assignment?
+
 - We learned about forward and backward propagation in great detail. Also, building a neural network
   was not too difficult.
-
+********************************************************************************************************
 4. What did you dislike about this assignment?
-- None
 
+- None
+********************************************************************************************************
 5. How did your team function, including details such as what each team member contributed, 
 how the team communicated with each other, and how team software development & design was accomplished?
-- Our group worked in multiple ways. We all met up together to complete task 1 as a group, which was to implement 
-  the neuralnetwork.py. We all worked on it by using the VS live share extension so we all came up with the structure 
-  of the class together. Indiviually, Amulya and Lana worked on the trainOnExampleLana, and updateNetwork Weights. 
-  Vihan and Luke worked on backward and forward propagation functions, the error computations and the output for the 
-  hidden and output units. Luke worked on the code for graphing the epochs and values emitted by hidden units. We all met 
-  up and worked together to evaluate and test all remaining tasks including task2.py where we all worked on it together 
-  to write the code using the VS live share extension. We all contributed to the write-ups and the README and all met up 
-  multiple times to brainstorm, debug, document and analyze the code together as well as work on the analysis for task 4.
 
-
+  How did our team function
+  - 
+  
+  What each team member contributed
+  - Luke: 
+  - Vihan: 
+  - Lana: 
+  - Amulya: 
+  
+  How the team communicated with each other
+  - We communicated with each other using zoom meetings and groupMe.
+  
+  How team software development & design was accomplished
+  - 
+  
+********************************************************************************************************
 6. What did you learn from this assignment?
-- We learned how to implement the backpropagation learning algorithm, observing and analyzing  the graphs that 
-  were generated and overall learning indepth about multi-level neural networks. Even though, we had learned 
-  about the backpropagation learning algorithm and multi-level neural networks in class it was very educational 
-  to see implement it ourselves and analyze our results. Additionally, We refined our Python programming skills. 
-  We reinforced our understanding of neural networks and our understanding of learning algorithms in general. 
-  We practiced working collaboratively with Git. 
+
+-  One thing we did not learn about in detail from class was forward propagation. We learned about it in 
+great detail while working on the project.
