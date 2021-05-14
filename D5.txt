@@ -1,20 +1,28 @@
 1. What was easy about this assignment?
 
-_______________________________________________________________________________________________
-2. What was challenging about this assignment, or parts that you couldn’tget working correctly?
+The pseudocode supplied in class was extremely precise and detailed. Using a high level language made many engineering tasks simple, so we could very easily convert the complex algorithm into working code.
 
-_______________________________________________________________________________________________
+2. What was challenging about this assignment, or parts that you couldn’t get working correctly?
+
+Initially, we had some hiccups related to teamwork aspects. We spent a lengthy period of time trying to set up a collaborative coding environment using Visual Studio code. Also, everyone had finals at different stages of the project, so coordinating was a little more challenging than it had been on previous projects.
+
+Concerning the project itself, the neural network itself was the most challenging part of the implementation. The "physical" structure of the neural network was difficult for us to grasp at first. We had difficulty deciding what kind of data structures to use to implement this class. Once a general outline was constructed, implementing the algorithm was simply a matter of correctly converting pseudo code into physical code.
+
 3. What did you like about this assignment?
 
-_______________________________________________________________________________________________
+Neural networks are a beautiful feat of computer science. It was enjoyable to implement such an elegant algorithm and watch it work. Furthermore, it was cool to build off of the perceptron we had previously implemented and produce a more powerful learner.
+
 4. What did you dislike about this assignment?
 
-_______________________________________________________________________________________________
-5. How did your team function, including details such as what each teammember contributed, 
-how the team communicated with each other, andhow team software development & design was 
-accomplished?
+The fact that finals were occurring simultaneously made the team-based components of this project more difficult than they had been during previous projects.
 
-_______________________________________________________________________________________________
+5. How did your team function, including details such as what each team member contributed, 
+how the team communicated with each other, and how team software development & design was accomplished?
+
+We functioned well together. We had an initial meet up over Zoom shortly after the project was assigned. The first discussion was not hugely productive because we spent so long trying to set up a collaborative coding workspace, but it gave us a good-enough foundation to proceed. Over the next week, we communicated over a messaging app, GroupMe, and gradually finished the project bit by bit. 
+
+Luke produced plots. 
+
 6. What did you learn from this assignment?
 
-_______________________________________________________________________________________________
+We refined our Python programming skills. We reinforced our understanding of neural networks and our understanding of learning algorithms in general. We practiced working collaboratively with Git. 
