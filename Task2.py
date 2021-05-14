@@ -203,7 +203,7 @@ if __name__ == "__main__":
            outputUnitOutputsForEpoch.append(array[1])
        #
        
-       #(WRITE COMMENT)
+       #obtain values needed to write a line in SumOfSquaredErrors.csv
        errorsForEpoch = []
        numOfCols = len(outputUnitOutputsForEpoch[0])
        numOfRows = len(outputUnitOutputsForEpoch)
@@ -215,7 +215,8 @@ if __name__ == "__main__":
            errorsForEpoch.append(sumOfSquareErr)
        #
        
-       #(WRITE COMMENT)
+       #write a line in SumOfSquaredErrors.csv
+       #make sure each value for a line in SumOfSquaredErrors.csv has at most 4 digits after a decimal place
        numDigitsAfterDecimalPlace = 4
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
