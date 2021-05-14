@@ -17,21 +17,18 @@
 ********************************************************************************************************
 5. How did your team function, including details such as what each team member contributed, 
 how the team communicated with each other, and how team software development & design was accomplished?
-
-  How did our team function
-  - 
   
   What each team member contributed
-  - Luke: 
-  - Vihan: 
-  - Lana: 
-  - Amulya: 
+  - Luke: worked on tasks 1, 3 and 4
+  - Vihan: worked on tasks 1 & 2, revised reflection & readme, wrote source code documentation
+  - Lana: worked on task 1, task 4, readme & reflection
+  - Amulya: worked on task 1, task 4, reviewed source code documentation
   
   How the team communicated with each other
   - We communicated with each other using zoom meetings and groupMe.
   
   How team software development & design was accomplished
-  - 
+  - We shared source code with each other using github.
   
 ********************************************************************************************************
 6. What did you learn from this assignment?
