@@ -2,10 +2,8 @@
 - None
 
 2. What was challenging about this assignment, or parts that you couldn’t get working correctly?
-- At first, we had some difficulty planning the structure of the neural network class, thinkng about 
-  functions that were necessary, and computing 
-  the errors and the outputs of the hidden and output units. However, we were able to meet up and 
-  resolve those issues by brainstroming together as a group. 
+- We had difficulty figuring out how to create a class for a neural network. Also, we were confused
+  as to how to compute the error and output of the output and hidden units.
 
 3. What did you like about this assignment?
 - We enjoyed working together as we had a good group dynamic. We also enjoyed implementing the 
