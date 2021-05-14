@@ -1,3 +1,7 @@
+#Authors: # Authors: Lana Abdelmohsen, Amulya Badineni, Luke Kurlandski, Vihan Patel
+# Filename: Plotting.py 
+# Description: Contains the code used to plot for T3. 
+
 """
 Create the required plots.
 
