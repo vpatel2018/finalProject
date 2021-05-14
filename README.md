@@ -5,9 +5,9 @@
 1. neuralNetwork.py 
   - Contains our neural network class to create a neural network.
   - Contains a neuron class used to create a node for a neural network.
-  -Contains functions for updating hidden unit errors and output unit errors, which update the errors for the hidden or output unit in the neural network. The functions use target values as a parameter (list of values that will be compared with the outputs of all the output units in a neural network) and calculate the squared error. 
-  - contains a function to calculate weight updates by going through every input unit in the neural network and updating the weights of edges connecting an input unit to all hidden units in a neural network.
-  - contains backpropagation neural network learning algorithm that use target values as a paramter 
+  - Contains functions for updating hidden unit errors and output unit errors, which update the errors for the hidden or output unit in the neural network. The functions use target values as a parameter (list of values that will be compared with the outputs of all the output units in a neural network) and calculate the squared error. 
+  - Contains a function to calculate weight updates by going through every input unit in the neural network and updating the weights of edges connecting an input unit to all hidden units in a neural network.
+  - Contains backpropagation neural network learning algorithm that use target values as a paramter 
   - Contains weights that update the output for hidden and output units by using weights of edges connecting all the hidden units to an output unit and uses the values that all the hidden units will transfer to an output unit during forward propagation
   weight updates, error and output calculations. 
   - Contains a sigmoid method that calculates the sigmoid function which uses outputValue as a parameter which is the output of a unit in a neural network and the method outputs a decimal value between 0 and 1. 
@@ -17,8 +17,8 @@
   - produces a folder called D2, uses neuralNetwork.py.
   - Contains a function for creating the sum of squared errors file.
   - Contains a function that creates eight hidden unit encoding files and returns a list containing names of the hidden unit encoding files created. It takes fileName (represents name of csv file we are going to write to), array (represents list of values we have to include when writing a new line in a csv file) and numDigitsAfterDecimalPlace (represents number of digits that should come after a decimal place for a value) as parameters.
-  -Contains a function that writes a new line to a csv file and takes into account the number of digits that should come after a decimal place for a value that is written to a csv file. It takes fileName and array as parameters. 
-  -Contains a function that computes the sum of squared error and uses predictedValues (list of predicted values)
+  - Contains a function that writes a new line to a csv file and takes into account the number of digits that should come after a decimal place for a value that is written to a csv file. It takes fileName and array as parameters. 
+  - Contains a function that computes the sum of squared error and uses predictedValues (list of predicted values)
     expectedValues (list of expected values).
 3. D2  
   - folder containing files required for D2, produced by Task2.py
