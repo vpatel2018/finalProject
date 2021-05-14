@@ -1,19 +1,20 @@
 # Neural Networks Implementation and Analysis
-# A basic neural network implementation and performance analysis.
+A basic neural network implementation and performance analysis that includes content relating to the sum of squared errors and hidden unit encodings.
 
-# Instructions
+# Use python 3.6.0. On the hpc:
 - > module add python/3.6.0
-- > python3 main.py
 
-# Notes
-- We used pandas to produce our plots.
-- You may get some warnings about not having pandas installed.
-- There is no need to produce the plots, so just ignore them.
+# To run the neural network and produce the csv files:
+- > python3 Task2.py
+
+# We already include plots from the produced csv files, so you do not need to do worry about this. 
+# To produce plots from the csv files, one would install pandas and run:
+- > python3 plotting.py
 
 # Deliverables
 - D1 : the codebase itself
-- D2 : directory containing csv files with hidden unit encodings and sum of squared errors per epoch
-- D3 : directory containing csv files with plots of hidden unit encodings and sum of squared errors per epoch
+- D2 : directory containing csv files with hidden unit encodings and sum of squared errors per epoch. The naming schema of the files is self explanatory.
+- D3 : directory containing csv files with plots of hidden unit encodings and sum of squared errors per epoch. The naming schema of the files is self explanatory.
 - D4.HiddenRepresentations.csv : hidden Representations file
 - D4.pdf : Analysis for task 4
 - D5.pdf : Project Reflection
