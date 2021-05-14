@@ -101,8 +101,6 @@ class NeuralNetwork:
     #updates all the weights for a neural network
     def updateNetworkWeights(self):
         
-        #formula to use ->  w_{ji} = w_{ji} + (\eta * \delta_j * x_{ji})
-        
         #go through every input unit in a neural network
         for x in range(0, len(self.inputUnits)):
             
