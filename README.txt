@@ -4,8 +4,8 @@ Authors: Vihan Patel, Lana Abdelmohsen, Luke Kurlandski, Amulya Badineni
 FILES
 1. neuralNetwork.py - contains backpropagation neural network learning algorithm
 2. Task2.py - produces a folder called D2, uses neuralNetwork.py
-3. D2 : folder containing files required for D2, produced by Task2.py
-4. D3 : folder containing plots required for D3
+3. D2 - folder containing files required for D2, produced by Task2.py
+4. D3 - folder containing plots required for D3
 - (MORE NEEDED)
 
 ------------------------------------------------------------------------------------------------------------
