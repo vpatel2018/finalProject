@@ -10,9 +10,10 @@ A basic neural network implementation and performance analysis that includes con
 # We already include plots from the produced csv files, so you do not need to do worry about running plotting.py, which requires the third party pandas library.
 
 # Deliverables
-- D1 : the codebase itself
-- D2/* : directory containing csv files with hidden unit encodings and sum of squared errors per epoch. The hidden unit encoding files are named according to which hidden unit the file refers to.
-- D3/* : directory containing csv files with plots of hidden unit encodings and sum of squared errors per epoch. The hidden unit encoding files are named according to which hidden unit the file refers to.
+- Task2.py - (WRITE DESCRIPTION)
+- neuralNetwork.py - (WRITE DESCRIPTION)
+- D2 : folder containing files required for D2
+- D3 : folder containing plots required for D3
 - D4.HiddenRepresentations.csv : hidden Representations file
-- D4.pdf : Analysis for task 4
-- D5.pdf : Project Reflection
+- D4.pdf : written analysis needed for D4
+- D5.pdf : reflection needed for D5
