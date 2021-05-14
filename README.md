@@ -11,7 +11,7 @@
   - Contains weights that update the output for hidden and output units by using weights of edges connecting all the hidden units to an output unit and uses the values that all the hidden units will transfer to an output unit during forward propagation
   weight updates, error and output calculations. 
   - Contains a sigmoid method that calculates the sigmoid function which uses outputValue as a parameter which is the output of a unit in a neural network and the method outputs a decimal value between 0 and 1. 
-  -Contains a method for forward propagation which uses the inputVector as a parameter which is a list of values that will be fed to the input units. It's functionality is that it stores input values in input units and computes outputs for all hidden and output units. 
+  - Contains a method for forward propagation which uses the inputVector as a parameter which is a list of values that will be fed to the input units. It's functionality is that it stores input values in input units and computes outputs for all hidden and output units. 
   - Contains a training function that helps the neural network learn from a training example and it uses inputVector as a parameter which is a list of numbers that will be fed to the input units and outputVector as parameter which is a list of values that will be compared with the outputs of all output units.
 2. Task2.py 
   - produces a folder called D2, uses neuralNetwork.py.
