@@ -196,7 +196,7 @@ if __name__ == "__main__":
        #used to store the outputs of all output units for each training example
        outputUnitOutputsForEpoch = []
  
-       #(WRITE COMMENT)
+       #write outputs of hidden units to hidden unit encoding files
        for y in range(0, len(trainingSet)):
            array = network.trainOnExample(trainingSet[y][0], trainingSet[y][1])         
            appendListContentsToFile2(hueFiles[y], array[0])
