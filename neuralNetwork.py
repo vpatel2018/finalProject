@@ -56,7 +56,7 @@ class NeuralNetwork:
         
         '''
         for each output unit, use the formula \delta_k = (o_k) * (1 - o_k) * (t_k - o_k) to 
-        compute the most up to date output for an output unit
+        compute the most up to date output
         '''
         for x in range(0, len(self.outputUnits)):
             output = self.outputUnits[x].output
@@ -88,7 +88,7 @@ class NeuralNetwork:
                 total += product
             #
             
-            #calculate error of a hidden unit using the formula \delta_h = (o_h) * (1 - o_h) * \sum_{k \in outputs} (w_{kh} * \delta_k)
+            #calculate error of a hidden unit
             output = self.hiddenUnits[x].output
             self.hiddenUnits[x].error = output * (1 - output) * total
             
