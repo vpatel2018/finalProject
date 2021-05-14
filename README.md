@@ -1,7 +1,7 @@
-CSC 426 Final Project: Neural Networks Implementation and Analysis
-Authors: Vihan Patel, Lana Abdelmohsen, Luke Kurlandski, Amulya Badineni
+# CSC 426 Final Project: Neural Networks Implementation and Analysis
+# Authors: Vihan Patel, Lana Abdelmohsen, Luke Kurlandski, Amulya Badineni
 
-FILES
+# Content Guide and High-level Description of Code
 1. neuralNetwork.py 
   - Contains our neural network class to create a neural network.
   - Contains a neuron class used to create a node for a neural network.
@@ -32,7 +32,7 @@ FILES
 
 ------------------------------------------------------------------------------------------------------------
 
-STEPS FOR RUNNING SOURCE CODE
+# STEPS FOR RUNNING SOURCE CODE
 
 1. Figure out the absolute path for a folder called finalProject. 
 2. Type 'cd @', where @ represents the absolute path for a folder called finalProject. Press the return key.
