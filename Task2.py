@@ -1,4 +1,4 @@
-#Authors: # Authors: Lana Abdelmohsen, Amulya Badineni, Luke Kurlandski, Vihan Patel
+# Authors: Lana Abdelmohsen, Amulya Badineni, Luke Kurlandski, Vihan Patel
 # Filename: Task2.py 
 # Description: Contains the code used to create the sum of squared errors file and compute it as required for task 2, eight hidden unit encoding files.
 
