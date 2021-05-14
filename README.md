@@ -14,3 +14,4 @@ A basic neural network implementation and performance analysis that includes con
 - neuralNetwork.py - (WRITE DESCRIPTION)
 - D2 : folder containing files required for D2
 - D3 : folder containing plots required for D3
+- (MORE NEEDED)
