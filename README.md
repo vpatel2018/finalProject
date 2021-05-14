@@ -7,7 +7,7 @@ A basic neural network implementation and performance analysis that includes con
 # To run the neural network and produce the csv files:
 - > python3 Task2.py
 
-# We already include plots from the produced csv files, so you do not need to do worry about this. To produce plots from the csv files, one would install pandas and run:
+# We already include plots from the produced csv files, so you do not need to do worry about running plotting.py, which requires the third party pandas library.
 - > python3 plotting.py
 
 # Deliverables
