@@ -21,7 +21,7 @@ how the team communicated with each other, and how team software development & d
   What each team member contributed
   - Luke: worked on tasks 1, 3 and 4
   - Vihan: worked on tasks 1 & 2, revised reflection & readme, wrote source code documentation
-  - Lana: worked on task 1, task 4, readme, reflectionand debugging
+  - Lana: worked on task 1, task 4, readme, reflection and debugging
   - Amulya: worked on task 1, task 4, reviewed source code documentation
   
   How the team communicated with each other
