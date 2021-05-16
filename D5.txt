@@ -5,7 +5,7 @@
 2. What was challenging about this assignment, or parts that you couldn’t get working correctly?
 
 - We had difficulty figuring out how to create a class for a neural network. Also, we were confused
-  as to how to compute the error and output of the output and hidden units but once we figured it out everything worked. 
+  as to how to compute the error and output of the output and hidden units. 
 ********************************************************************************************************
 3. What did you like about this assignment?
 
