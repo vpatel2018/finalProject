@@ -108,11 +108,19 @@ class NeuralNetwork:
             
             #update the weights of edges connecting an input unit to all hidden units in a neural network
             for y in range(0, len(self.hiddenUnits)): 
+                
+                #represents an input unit
                 inputUnit = self.inputUnits[x]
+                
+                #represents error of a hidden unit
                 delta = self.hiddenUnits[y].error 
+                
+                #represents value that an input unit transfers to a hidden unit
                 inputValue = inputUnit.inputs[y]
-                change = delta * inputValue * self.learningRate 
-                self.inputUnits[x].edgeWeights[y] += change 
+                
+                #update weight of edge connecting an input unit to a hidden unit
+                self.inputUnits[x].edgeWeights[y] = self.inputUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
+                
             #
             
         #
@@ -122,11 +130,19 @@ class NeuralNetwork:
             
             #update the weights of edges connecting a hidden unit to all output units in a neural network
             for y in range(0, len(self.outputUnits)): 
+                
+                #represents a hidden unit
                 hiddenUnit = self.hiddenUnits[x] 
+                
+                #represents error of output unit
                 delta = self.outputUnits[y].error 
+                
+                #represents value that a hidden unit transfers to an output unit
                 inputValue = hiddenUnit.inputs[y] 
-                change = delta * inputValue * self.learningRate 
-                self.hiddenUnits[x].edgeWeights[y] += change 
+                
+                #update weight of edge connecting a hidden unit to an output unit
+                self.hiddenUnits[x].edgeWeights[y] = self.hiddenUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
+                
             #
             
         #
