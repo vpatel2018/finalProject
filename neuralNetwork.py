@@ -173,10 +173,19 @@ class NeuralNetwork:
         - use the values that all the input units will transfer to a hidden unit during forward propagation
         '''
         for x in range(0, len(self.inputUnits)): 
-            inputUnit = self.inputUnits[x] 
-            inputValue = inputUnit.inputs[index] 
-            weight = inputUnit.edgeWeights[index] 
+            
+            #represents an input unit
+            inputUnit = self.inputUnits[x]
+            
+            #represents value that input unit will transfer to hidden unit
+            inputValue = inputUnit.inputs[index]
+            
+            #represents weight of edge connecting input unit to hidden unit
+            weight = inputUnit.edgeWeights[index]
+            
+            #represents product of the two variables above
             product = inputValue * weight 
+
             output += product 
         #
         
