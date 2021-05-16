@@ -5,9 +5,9 @@ import math
 
 #used to create a node for a neural network
 class Neuron:
-    def __init__(self, edgeWeights=[], inputs=[], error=0, output=0):
+    def __init__(self, edgeWeights=[], inputValue=0, error=0, output=0):
         self.edgeWeights = edgeWeights #used to store weights of edges connected to a unit in a neural network
-        self.inputs = inputs #used to store input taken by a neural network
+        self.inputValue = inputValue #used to store input taken by a neural network
         self.error = error #represents error for a unit in a neural network
         self.output = output #represents output for a unit in a neural network
     # 
@@ -35,10 +35,10 @@ class NeuralNetwork:
         self.outputUnits = [Neuron() for x in range(numOutputUnits)]
         
         #represents hidden units for neural network
-        self.hiddenUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)], [0 for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
+        self.hiddenUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
         
         #represents input units for neural network
-        self.inputUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)], [0 for y in range(numHiddenUnits)]) for x in range(numInputUnits)]
+        self.inputUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)]) for x in range(numInputUnits)]
         
         #represents learning rate for neural network
         self.learningRate = learningRate
@@ -116,7 +116,7 @@ class NeuralNetwork:
                 delta = self.hiddenUnits[y].error 
                 
                 #represents value that an input unit transfers to a hidden unit
-                inputValue = inputUnit.inputs[y]
+                inputValue = inputUnit.inputValue
                 
                 #update weight of edge connecting an input unit to a hidden unit
                 self.inputUnits[x].edgeWeights[y] = self.inputUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
@@ -138,7 +138,7 @@ class NeuralNetwork:
                 delta = self.outputUnits[y].error 
                 
                 #represents value that a hidden unit transfers to an output unit
-                inputValue = hiddenUnit.inputs[y] 
+                inputValue = hiddenUnit.inputValue
                 
                 #update weight of edge connecting a hidden unit to an output unit
                 self.hiddenUnits[x].edgeWeights[y] = self.hiddenUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
@@ -194,7 +194,7 @@ class NeuralNetwork:
             inputUnit = self.inputUnits[x]
             
             #represents value that an input unit will transfer to a hidden unit
-            inputValue = inputUnit.inputs[index]
+            inputValue = inputUnit.inputValue
             
             #represents weight of edge connecting an input unit to a hidden unit
             weight = inputUnit.edgeWeights[index]
@@ -233,7 +233,7 @@ class NeuralNetwork:
             hiddenUnit = self.hiddenUnits[x] 
             
             #represents value that a hidden unit will transfer to an output unit
-            inputValue = hiddenUnit.inputs[index] 
+            inputValue = hiddenUnit.inputValue 
             
             #represents weight of edge connecting a hidden unit to an output unit
             weight = hiddenUnit.edgeWeights[index] 
@@ -278,14 +278,14 @@ class NeuralNetwork:
         
         #store input values in input units
         for x in range(0, len(self.inputUnits)): 
-            self.inputUnits[x].inputs = [inputVector[x]] * len(self.inputUnits[x].inputs) 
+            self.inputUnits[x].inputValue = inputVector[x] 
         #
         
         #compute outputs for all hidden units
         for x in range(0, len(self.hiddenUnits)): 
             NeuralNetwork.updateOutputForHiddenUnit(self, x) 
             self.hiddenUnits[x].output = NeuralNetwork.sigmoid(self, self.hiddenUnits[x].output) 
-            self.hiddenUnits[x].inputs = [self.hiddenUnits[x].output] * len(self.hiddenUnits[x].inputs) 
+            self.hiddenUnits[x].inputValue = self.hiddenUnits[x].output
         #
         
         #compute outputs for all output units
@@ -328,7 +328,7 @@ class NeuralNetwork:
             for x in range(0, len(item)): 
                 item[x].error = 0 
                 item[x].output = 0 
-                item[x].inputs = [0] * len(item[x].inputs) 
+                item[x].inputValue = 0
             #
         #
         
