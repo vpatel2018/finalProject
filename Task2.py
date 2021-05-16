@@ -144,10 +144,10 @@ if __name__ == "__main__":
    numOutputUnits = 8
 
    #minimum value for initial values of neural network weights
-   lowerLimitForRandNums = -0.09999999999999999
+   lowerLimitForRandNums = -0.1
 
    #maximum value for initial values of neural network weights
-   upperLimitForRandNums = 0.09999999999999999
+   upperLimitForRandNums = 0.1
 
    #represents learning rate for neural network
    learningRate = 0.3
