@@ -320,6 +320,8 @@ class NeuralNetwork:
         
         #perform forward propagation
         NeuralNetwork.doForwardPropagation(self, inputVector.copy()) 
+        
+        #create the list that we want to return from this function
         numHiddenUnits = len(self.hiddenUnits) 
         numOutputUnits = len(self.outputUnits) 
         hiddenUnitOutputs = [self.hiddenUnits[x].output for x in range(numHiddenUnits)] 
