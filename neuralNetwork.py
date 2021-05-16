@@ -205,7 +205,7 @@ class NeuralNetwork:
             output += product 
         #
         
-        self.hiddenUnits[index].output = output 
+        self.hiddenUnits[index].output = NeuralNetwork.sigmoid(self, output)
            
     #
     
@@ -244,7 +244,7 @@ class NeuralNetwork:
             output += product 
         #
         
-        self.outputUnits[index].output = output 
+        self.outputUnits[index].output = NeuralNetwork.sigmoid(self, output) 
         
     #
     
@@ -288,8 +288,7 @@ class NeuralNetwork:
         for x in range(0, len(self.hiddenUnits)):
             
             #compute the output for a hidden unit
-            NeuralNetwork.updateOutputForHiddenUnit(self, x) 
-            self.hiddenUnits[x].output = NeuralNetwork.sigmoid(self, self.hiddenUnits[x].output) 
+            NeuralNetwork.updateOutputForHiddenUnit(self, x)  
             
             #a hidden unit will transfer its output to an output unit
             self.hiddenUnits[x].inputValue = self.hiddenUnits[x].output
@@ -301,7 +300,6 @@ class NeuralNetwork:
             
             #compute the output for an output unit
             NeuralNetwork.updateOutputForOutputUnit(self, x) 
-            self.outputUnits[x].output = NeuralNetwork.sigmoid(self, self.outputUnits[x].output)
             
         #
         
