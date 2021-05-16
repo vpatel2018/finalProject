@@ -24,11 +24,10 @@
   - folder containing files required for D2, produced by Task2.py
 4. D3 
   - folder containing plots required for D3
-5. Task4Table.py
-  - a single summary HiddenRepresentationsFile that has eight lines in total that highlights the three values on the last line of the files in D2, after the 5,000th epoch of learning
- 6.Task 4 Analysis
-  - An analysis of the summary of the eight linesfor the hidden unit encodings
-  - What observations can you make about the machine’s hidden value encodings of the input values?  
+5. Task4Table.csv
+  - a single summary Hidden representations file that has eight lines in total that highlights the three values on the last line of the files in D2, after the 5,000th epoch of learning
+6. Task 4 Analysis (WHAT IS NAME OF FILE???)
+  - An analysis of the summary of the eight lines of Task4Table.csv
 
 ------------------------------------------------------------------------------------------------------------
 
