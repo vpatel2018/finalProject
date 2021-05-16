@@ -25,8 +25,10 @@
   - folder containing plots required for D3
 5. HiddenRepresentationsFile.csv
   - a single summary hidden representations file that has eight lines in total that highlights the three values on the last line of the files in D2, after the 5,000th epoch of learning
-6. Task 4 Analysis (WHAT IS NAME OF FILE???)
+6. Analysis.pdf (WHAT IS NAME OF FILE???)
   - An analysis of the summary of the eight lines of Task4Table.csv
+7. instructions.pdf
+  - Insturctions for the final project
 
 ------------------------------------------------------------------------------------------------------------
 
