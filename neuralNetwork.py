@@ -278,20 +278,31 @@ class NeuralNetwork:
         
         #store input values in input units
         for x in range(0, len(self.inputUnits)): 
+            
+            #use input units to store values present in input vector
             self.inputUnits[x].inputValue = inputVector[x] 
+            
         #
         
         #compute outputs for all hidden units
-        for x in range(0, len(self.hiddenUnits)): 
+        for x in range(0, len(self.hiddenUnits)):
+            
+            #compute the output for a hidden unit
             NeuralNetwork.updateOutputForHiddenUnit(self, x) 
             self.hiddenUnits[x].output = NeuralNetwork.sigmoid(self, self.hiddenUnits[x].output) 
+            
+            #a hidden unit will transfer its output to an output unit
             self.hiddenUnits[x].inputValue = self.hiddenUnits[x].output
+            
         #
         
         #compute outputs for all output units
-        for x in range(0, len(self.outputUnits)): 
+        for x in range(0, len(self.outputUnits)):
+            
+            #compute the output for an output unit
             NeuralNetwork.updateOutputForOutputUnit(self, x) 
-            self.outputUnits[x].output = NeuralNetwork.sigmoid(self, self.outputUnits[x].output) 
+            self.outputUnits[x].output = NeuralNetwork.sigmoid(self, self.outputUnits[x].output)
+            
         #
         
     #    
