@@ -37,8 +37,12 @@ class NeuralNetwork:
         #represents hidden units for neural network
         self.hiddenUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)]) for x in range(numHiddenUnits)]
         
-        #represents input units for neural network
-        self.inputUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)]) for x in range(numInputUnits)]
+        #represents bias node for hidden unit layer
+        self.biasNodeForHiddenUnit = Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numOutputUnits)], 1)
+        
+        #contains input units for neural network
+        #contains bias node for input unit layer
+        self.inputUnits = [Neuron([random.uniform(lowerLimitForRandNums, upperLimitForRandNums) for y in range(numHiddenUnits)]) for x in range(numInputUnits + 1)]
         
         #represents learning rate for neural network
         self.learningRate = learningRate
@@ -146,6 +150,17 @@ class NeuralNetwork:
             #
             
         #
+
+        #go through bias node for hidden unit layer
+        for y in range(0, len(self.outputUnits)): 
+                
+            #represents error of output unit
+            delta = self.outputUnits[y].error 
+
+            #update weight of edge connecting bias node for hidden unit layer to an output unit
+            self.biasNodeForHiddenUnit.edgeWeights[y] = self.biasNodeForHiddenUnit.edgeWeights[y] + (delta * self.learningRate)
+            
+        #
         
     #
     
@@ -244,6 +259,20 @@ class NeuralNetwork:
             output += product 
         #
         
+        #represents bias node for hidden unit layer
+        biasNode = self.biasNodeForHiddenUnit
+        
+        #represents value that bias node for hidden unit layer will transfer to an output unit
+        inputValue = biasNode.inputValue
+        
+        #represents weight of edge connecting bias node for hidden unit layer to an output unit
+        weight = biasNode.edgeWeights[index]
+        
+        #represents product of the two variables above
+        product = inputValue * weight
+        
+        output += product
+        
         self.outputUnits[index].output = NeuralNetwork.sigmoid(self, output) 
         
     #
@@ -277,12 +306,15 @@ class NeuralNetwork:
         '''
         
         #store input values in input units
-        for x in range(0, len(self.inputUnits)): 
+        for x in range(0, len(self.inputUnits) - 1): 
             
             #use input units to store values present in input vector
             self.inputUnits[x].inputValue = inputVector[x] 
             
         #
+        
+        #use bias node for input unit layer to store a 1
+        self.inputUnits[len(self.inputUnits) - 1].inputValue = 1
         
         #compute outputs for all hidden units
         for x in range(0, len(self.hiddenUnits)):
