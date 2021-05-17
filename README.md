@@ -19,7 +19,7 @@
     - It calls the functions for foward and backward propagation
 2. Task2.py 
   - Produces a folder called D2, uses neuralNetwork.py.
-  - Defines the learning rate, epochs to run, and the multi-layer 8x3x8 neural network
+  - Defines the learning rate, epochs to run, the upper and lower bounds of the weights and the multi-layer 8x3x8 neural network
   - Contains a function for creating the sum of squared errors file.
   - Contains a function that creates eight hidden unit encoding files and returns a list containing names of the hidden unit encoding files created. 
   - Contains a function that writes a new line to a csv file and takes into account the number of digits that should come after a decimal place for a value that is written to a csv file. 
