@@ -362,19 +362,7 @@ class NeuralNetwork:
         
         #perform backward propagation
         NeuralNetwork.doBackwardPropagation(self, outputVector.copy())
-        
-        #clear all garbage values that are found in a neural network
-        itemsToClean = [self.inputUnits, self.hiddenUnits, self.outputUnits] 
-        
-        for h in range(0, len(itemsToClean)): 
-            item = itemsToClean[h] 
-            for x in range(0, len(item)): 
-                item[x].error = 0 
-                item[x].output = 0 
-                item[x].inputValue = 0
-            #
-        #
-        
+                
         return array
         
     #
