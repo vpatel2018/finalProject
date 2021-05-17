@@ -101,13 +101,13 @@ class NeuralNetwork:
             #represents value that an input unit transfers to a hidden unit
             inputValue = inputUnit.inputValue
             
-            #update the weights of edges connecting an input unit to all hidden units in a neural network
+            
             for y in range(0, len(self.hiddenUnits)): 
                 
                 #represents error of a hidden unit
                 delta = self.hiddenUnits[y].error 
                 
-                #update weight of edge connecting an input unit to a hidden unit
+                #update the weights of edges connecting an input unit to all hidden units in a neural network
                 self.inputUnits[x].edgeWeights[y] = self.inputUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
     
         #go through every hidden unit in a neural network
@@ -119,13 +119,13 @@ class NeuralNetwork:
             #represents value that a hidden unit transfers to an output unit
             inputValue = hiddenUnit.inputValue
             
-            #update the weights of edges connecting a hidden unit to all output units in a neural network
+            
             for y in range(0, len(self.outputUnits)): 
                 
                 #represents error of output unit
                 delta = self.outputUnits[y].error 
 
-                #update weight of edge connecting a hidden unit to an output unit
+                ##update the weights of edges connecting a hidden unit to all output units in a neural network
                 self.hiddenUnits[x].edgeWeights[y] = self.hiddenUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
 
         #go through bias node for hidden unit layer
