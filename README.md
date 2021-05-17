@@ -30,9 +30,17 @@
   - Folder containing plots required for D3
 5. HiddenRepresentationsFile.csv
   - A single summary hidden representations file that has eight lines in total that highlight the three values on the last line of the files in D2, after the 5,000th epoch of learning
-6. Analysis.pdf
+6. D5.txt
+  - The reflection in responses to: 
+    - What was easy about this assignment?
+    - What was challenging about this assignment, or parts that you couldn’t get working correctly?
+    - What did you like about this assignment?
+    - What did you dislike about this assignment?
+    - How did your team function, including details such as what each teammember contributed, how the team communicated with each other, and how team software development & design was accomplished?
+    - What did you learn from this assignment?
+8. Analysis.pdf
   - An analysis of the summary of the eight lines of HiddenRepresentationsFile.csv for task 4
-7. Task3.py
+9. Task3.py
   - The code used to generate all plots, not required to run this file as plots are found in D3 folder. 
 
 ------------------------------------------------------------------------------------------------------------
