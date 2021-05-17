@@ -12,7 +12,6 @@ class Neuron:
         self.output = output #represents output for a unit in a neural network
    
 
- 
 class NeuralNetwork:
     
     #*********************************************************************************************************#
