@@ -30,7 +30,7 @@ how the team communicated with each other, and how team software development & d
   - We communicated with each other using zoom meetings and groupMe.
   
   How team software development & design was accomplished
-  - We shared source code with each other using github.
+  - We shared source code with each other using github and brainstormed together over zoom multiple times.
   
 ********************************************************************************************************
 6. What did you learn from this assignment?
