@@ -16,14 +16,13 @@ def createSSEFile():
    string = ""
    for x in range(0, 8):
        string += ('SSE_output_unit' + str(x + 1) + ',')   
-   #
+  
    string = string[0:len(string) - 1] + '\n'
    file.write(string)
    file.close()
     
    return sseFile
     
-#
 
 #creates eight hidden unit encoding files required for task 2
 #returns a list containing names of the hidden unit encoding files created
@@ -34,7 +33,6 @@ def createHiddenUnitEncodingFiles():
 
    for x in range(0, 8):
        vectors[x][x] = 1
-   #
     
    #list containing names of the hidden unit encoding files created
    hiddenUnitEncodingFiles = []
@@ -44,7 +42,7 @@ def createHiddenUnitEncodingFiles():
        word = ''
        for y in range(0, len(vectors[x])):
            vectors[x][y] = str(vectors[x][y])
-       #
+     
        word = word.join(vectors[x])
        
        #create hidden unit encoding file
@@ -56,11 +54,11 @@ def createHiddenUnitEncodingFiles():
        file.write('HiddenUnit1Encoding,HiddenUnit2Encoding,HiddenUnit3Encoding\n')
        file.close()
        
-   #
+   
    
    return hiddenUnitEncodingFiles
 
-#
+
 
 #used to compute sum of square error
 def computeSumOfSquareError(predictedValues, expectedValues):
@@ -75,11 +73,11 @@ def computeSumOfSquareError(predictedValues, expectedValues):
     #take summation of differences between predicted and expected values
     for x in range(0, len(predictedValues)):
         sumOfSquareErrors += math.pow(expectedValues[x] - predictedValues[x], 2)
-    #
+    
     
     return sumOfSquareErrors
        
-#
+
 
 #writes a new line to a csv file
 #takes into account the number of digits that should come after a decimal place for a value that is written to a csv file
@@ -101,13 +99,13 @@ def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
           string += (str(z)[0: str(z).find('.')] + ',')
         else:
           string += (str(z)[0: numDigitsAfterDecimalPlace + str(z).find('.') + 1] + ',')      
-        #
-    #
+        
+    
     string = string[0: len(string) - 1] + '\n'
     file.write(string)
     file.close()
     
-#
+
 
 #writes a new line to a csv file
 #does not take into account # of digits that should come after a decimal place for a value that is written to a csv file
@@ -125,12 +123,12 @@ def appendListContentsToFile2(fileName, array):
     string = ""
     for z in array:
         string += (str(z) + ',')   
-    #
+    
     string = string[0: len(string) - 1] + '\n'
     file.write(string)
     file.close()
     
-#
+
 
 if __name__ == "__main__":
    
@@ -163,7 +161,7 @@ if __name__ == "__main__":
 
    for x in range(0, 8):
        vectors[x][x] = 1
-   #
+   
    
    #represents training set
    trainingSet = [[vectors[x].copy(), vectors[x].copy()] for x in range(8)]
@@ -182,7 +180,7 @@ if __name__ == "__main__":
    print('D = {', end='')
    for x in range(0, len(trainingSet) - 1):
        print(trainingSet[x])    
-   #
+   
    print(trainingSet[len(trainingSet) - 1], end='}')
    print()
    print()
@@ -203,7 +201,7 @@ if __name__ == "__main__":
            array = network.trainOnExample(trainingSet[y][0], trainingSet[y][1])         
            appendListContentsToFile2(hueFiles[y], array[0])
            outputUnitOutputsForEpoch.append(array[1])
-       #
+       
        
        #obtain values needed to write a line in SumOfSquaredErrors.csv
        errorsForEpoch = []
@@ -215,14 +213,14 @@ if __name__ == "__main__":
            expectedValues = [vectors[z][y] for z in range(numOfRows)]
            sumOfSquareErr = computeSumOfSquareError(predictedValues, expectedValues)
            errorsForEpoch.append(sumOfSquareErr)
-       #
+       
        
        #write a line in SumOfSquaredErrors.csv
        #make sure each value for a line in SumOfSquaredErrors.csv has at most 4 digits after a decimal place
        numDigitsAfterDecimalPlace = 4
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
-   #
+   
    
    #make sure SumOfSquaredErrors.csv and all hidden unit encoding files produced are placed in D2
    os.system('mv SumOfSquaredErrors.csv D2/SumOfSquaredErrors.csv')
@@ -230,6 +228,6 @@ if __name__ == "__main__":
    for x in hueFiles:
        command = 'mv ' + x + ' D2/' + x
        os.system(command)
-   #
+   
 
-#
+
