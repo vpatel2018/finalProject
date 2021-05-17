@@ -16,7 +16,7 @@
   - Contains a sigmoid method that calculates the sigmoid function which uses "outputValue" as a parameter which is the output of a unit in a neural network and the method outputs a decimal value between 0 and 1. 
   - Contains a method for forward propagation which uses the "inputVector" as a parameter which is a list of values that will be fed to the input units. Its functionality is that it stores input values in input units and computes outputs for all hidden and output units. 
   - Contains a training function that helps the neural network learn from a training example and it uses "inputVector" as a parameter and "outputVector" as a parameter (which is a list of values that will be compared with the outputs of all output units).
-    - It calls the functions for foward and backward propagation
+    - It calls the functions for forward and backward propagation
 2. Task2.py 
   - Produces a folder called D2, uses neuralNetwork.py.
   - Defines the learning rate, epochs to run, the upper and lower bounds of the weights and the multi-layer 8x3x8 neural network
@@ -36,13 +36,13 @@
     - What was challenging about this assignment, or parts that you couldn’t get working correctly?
     - What did you like about this assignment?
     - What did you dislike about this assignment?
-    - How did your team function, including details such as what each teammember contributed, how the team communicated with each other, and how team software development & design was accomplished?
+    - How did your team function, including details such as what each team member contributed, how the team communicated with each other, and how team software development & design was accomplished?
     - What did you learn from this assignment?
-8. Analysis.pdf
+7. Analysis.pdf
   - An analysis of the summary of the eight lines of HiddenRepresentationsFile.csv for task 4
-9. Task3.py
+8. Task3.py
   - The code used to generate all plots, not required to run this file as plots are found in D3 folder. 
-
+  - Note: The values in D3 are for the corresponding values currently in D2, if you run task2.py different values of D2 will be present. 
 ------------------------------------------------------------------------------------------------------------
 
 # STEPS FOR RUNNING SOURCE CODE
