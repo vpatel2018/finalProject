@@ -31,6 +31,8 @@
   - A single summary hidden representations file that has eight lines in total that highlight the three values on the last line of the files in D2, after the 5,000th epoch of learning
 6. Analysis.pdf
   - An analysis of the summary of the eight lines of HiddenRepresentationsFile.csv for task 4
+7.Task3.py
+  - The code used to generate all plots, not required to run this file as plots are found in D3 folder. 
 
 ------------------------------------------------------------------------------------------------------------
 
