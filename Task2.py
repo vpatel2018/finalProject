@@ -23,7 +23,6 @@ def createSSEFile():
     
    return sseFile
     
-
 #creates eight hidden unit encoding files required for task 2
 #returns a list containing names of the hidden unit encoding files created
 def createHiddenUnitEncodingFiles():
@@ -54,11 +53,8 @@ def createHiddenUnitEncodingFiles():
        file.write('HiddenUnit1Encoding,HiddenUnit2Encoding,HiddenUnit3Encoding\n')
        file.close()
        
-   
-   
+
    return hiddenUnitEncodingFiles
-
-
 
 #used to compute sum of square error
 def computeSumOfSquareError(predictedValues, expectedValues):
@@ -77,8 +73,6 @@ def computeSumOfSquareError(predictedValues, expectedValues):
     
     return sumOfSquareErrors
        
-
-
 #writes a new line to a csv file
 #takes into account the number of digits that should come after a decimal place for a value that is written to a csv file
 def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
@@ -105,8 +99,6 @@ def appendListContentsToFile(fileName, array, numDigitsAfterDecimalPlace):
     file.write(string)
     file.close()
     
-
-
 #writes a new line to a csv file
 #does not take into account # of digits that should come after a decimal place for a value that is written to a csv file
 def appendListContentsToFile2(fileName, array):
@@ -128,8 +120,6 @@ def appendListContentsToFile2(fileName, array):
     file.write(string)
     file.close()
     
-
-
 if __name__ == "__main__":
    
    #represents number of input units for a neural network
@@ -220,8 +210,6 @@ if __name__ == "__main__":
        numDigitsAfterDecimalPlace = 4
        appendListContentsToFile(sseFile, errorsForEpoch, numDigitsAfterDecimalPlace)
        
-   
-   
    #make sure SumOfSquaredErrors.csv and all hidden unit encoding files produced are placed in D2
    os.system('mv SumOfSquaredErrors.csv D2/SumOfSquaredErrors.csv')
    
