@@ -1,8 +1,8 @@
+# Authors: Lana Abdelmohsen, Amulya Badineni, Luke Kurlandski, Vihan Patel
+
 import neuralNetwork as nn
 import math
 import os
-
-# Authors: Lana Abdelmohsen, Amulya Badineni, Luke Kurlandski, Vihan Patel
 
 #creates sum of squared errors file required for task 2
 #returns the name of the sum of squared errors file that is created
