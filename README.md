@@ -41,9 +41,11 @@
 7. Analysis.pdf
   - An analysis of the summary of the eight lines of HiddenRepresentationsFile.csv for task 4
 8. Task3.py
-  - The code used to generate all plots, not required to run this file as plots are found in D3 folder. 
-  - Note: The values in D3 are for the corresponding values currently in D2, if you run task2.py different values of D2 will be present. 
+  - The code used to generate all plots, not required to run this file as plots are found in D3 folder.  
 ------------------------------------------------------------------------------------------------------------
+
+Note: The graphs in D3 are based on files in D2, so you might want to look at D3 before running Task2.py. 
+If you run Task2.py, files in D2 will be replaced with new files.
 
 # STEPS FOR RUNNING SOURCE CODE
 
