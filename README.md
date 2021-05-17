@@ -43,4 +43,3 @@
 2. Type 'cd @', where @ represents the absolute path for a folder called finalProject. Press the return key.
 3. Type 'module add python' and press the return key.
 4. Type 'python3 Task2.py' and press the return key.
-5. Type 'python3 Task3.py' and press the return key.
