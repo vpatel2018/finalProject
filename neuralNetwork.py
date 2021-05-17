@@ -14,8 +14,6 @@ class Neuron:
 
 class NeuralNetwork:
     
-    #*********************************************************************************************************#
-    
     #used to create a neural network
     def __init__(self, numInputUnits, numHiddenUnits, numOutputUnits, lowerLimitForRandNums, upperLimitForRandNums, learningRate):
         
@@ -45,8 +43,7 @@ class NeuralNetwork:
         
         #represents learning rate for neural network
         self.learningRate = learningRate
-
-    #*********************************************************************************************************#
+        
     
     #this function is used when back propagation is being done
     #updates the error for all the output units in a neural network
@@ -65,8 +62,7 @@ class NeuralNetwork:
             output = self.outputUnits[x].output
             target = targetValues[x]
             self.outputUnits[x].error = (output) * (1 - output) * (target - output) 
-        
-   #*********************************************************************************************************#
+            
 
     #this function is used when back propagation is being done
     #updates the error for all the hidden units in a neural network
@@ -92,7 +88,6 @@ class NeuralNetwork:
             output = self.hiddenUnits[x].output
             self.hiddenUnits[x].error = output * (1 - output) * total
 
-    #*********************************************************************************************************#
     
     #updates all the weights for a neural network
     def updateNetworkWeights(self):
@@ -142,7 +137,6 @@ class NeuralNetwork:
             #update weight of edge connecting bias node for hidden unit layer to an output unit
             self.biasNodeForHiddenUnit.edgeWeights[y] = self.biasNodeForHiddenUnit.edgeWeights[y] + (delta * self.learningRate)
 
-    #*********************************************************************************************************#
     
     #used to perform back propagation
     def doBackwardPropagation(self, targetValues):
@@ -161,8 +155,7 @@ class NeuralNetwork:
         #update weights for a neural network
         NeuralNetwork.updateNetworkWeights(self)
 
-    #*********************************************************************************************************#
-    
+        
     #this function is used when forward propagation is being done
     #updates the output for a hidden unit
     def updateOutputForHiddenUnit(self, index):
@@ -196,8 +189,7 @@ class NeuralNetwork:
             output += product 
         
         self.hiddenUnits[index].output = NeuralNetwork.sigmoid(self, output)
-  
-    #*********************************************************************************************************#
+        
     
     #this function is used when forward propagation is being done
     #updates the output for an output unit
@@ -246,8 +238,7 @@ class NeuralNetwork:
         output += product
         
         self.outputUnits[index].output = NeuralNetwork.sigmoid(self, output) 
-
-    #*********************************************************************************************************#
+        
     
     #serves as a sigmoid function
     def sigmoid(self, outputValue):
@@ -263,8 +254,7 @@ class NeuralNetwork:
         result = (1.0) / (1.0 * denominator)
             
         return result
-
-    #*********************************************************************************************************#
+    
    
     #used to perform forward propagation
     def doForwardPropagation(self, inputVector):
@@ -296,8 +286,7 @@ class NeuralNetwork:
             
             #compute the output for an output unit
             NeuralNetwork.updateOutputForOutputUnit(self, x) 
-
-    #*********************************************************************************************************#
+            
     
     #used to help a neural network learn from a training example
     def trainOnExample(self, inputVector, outputVector):
