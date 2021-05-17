@@ -6,12 +6,12 @@
 
 - We had difficulty figuring out how to create a class for a neural network. Also, we were confused
   as to how to compute the error and output of the output and hidden units. We figured how to implement the 
-  functions correctly as a group. 
+  functions correctly as a group by meeting over zoom and discussing our ideas.
 ********************************************************************************************************
 3. What did you like about this assignment?
 
-- We enjoyed working together as we had a good group dynamic. We also enjoyed implementing the backpropagation learning algorithm, observing and analyzing 
-the graphs that were generated and overall learning indepth about multi-level neural networks.
+- We enjoyed working together as we had a good group dynamic. We also enjoyed implementing the backpropagation 
+learning algorithm, observing and analyzing the graphs that were generated and overall learning indepth about multi-level neural networks.
 ********************************************************************************************************
 4. What did you dislike about this assignment?
 
