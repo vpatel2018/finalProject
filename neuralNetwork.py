@@ -56,7 +56,7 @@ class NeuralNetwork:
         
         '''
         for each output unit, use the formula \delta_k = (o_k) * (1 - o_k) * (t_k - o_k) to 
-        compute the most up to date output
+        compute the most up-to-date output
         '''
         for x in range(0, len(self.outputUnits)):
             output = self.outputUnits[x].output
@@ -98,7 +98,7 @@ class NeuralNetwork:
             #represents an input unit
             inputUnit = self.inputUnits[x]
             
-            #represents value that an input unit transfers to a hidden unit
+            #represents a value that an input unit transfers to a hidden unit
             inputValue = inputUnit.inputValue
             
             
@@ -116,7 +116,7 @@ class NeuralNetwork:
             #represents a hidden unit
             hiddenUnit = self.hiddenUnits[x]
             
-            #represents value that a hidden unit transfers to an output unit
+            #represents a value that a hidden unit transfers to an output unit
             inputValue = hiddenUnit.inputValue
             
             
@@ -164,7 +164,7 @@ class NeuralNetwork:
         index = a number >= 0, used to refer to some hidden unit
         '''
         
-        #represents up to date output for a hidden unit
+        #represents up-to-date output for a hidden unit
         output = 0
         
         '''
@@ -177,13 +177,13 @@ class NeuralNetwork:
             #represents an input unit
             inputUnit = self.inputUnits[x]
             
-            #represents value that an input unit will transfer to a hidden unit
+            #represents a value that an input unit will transfer to a hidden unit
             inputValue = inputUnit.inputValue
             
             #represents weight of edge connecting an input unit to a hidden unit
             weight = inputUnit.edgeWeights[index]
             
-            #represents product of the two variables above
+            #represents the product of the two variables above
             product = inputValue * weight 
 
             output += product 
@@ -199,7 +199,7 @@ class NeuralNetwork:
         index = a number >= 0, used to refer to some output unit
         '''
         
-        #represents up to date output for an output unit
+        #represents up-to-date output for an output unit
         output = 0
         
         '''
@@ -212,13 +212,13 @@ class NeuralNetwork:
             #represents a hidden unit
             hiddenUnit = self.hiddenUnits[x] 
             
-            #represents value that a hidden unit will transfer to an output unit
+            #represents a value that a hidden unit will transfer to an output unit
             inputValue = hiddenUnit.inputValue 
             
             #represents weight of edge connecting a hidden unit to an output unit
             weight = hiddenUnit.edgeWeights[index] 
             
-            #represents product of the two variables above
+            #represents the product of the two variables above
             product = inputValue * weight 
             
             output += product 
@@ -226,13 +226,13 @@ class NeuralNetwork:
         #represents bias node for hidden unit layer
         biasNode = self.biasNodeForHiddenUnit
         
-        #represents value that bias node for hidden unit layer will transfer to an output unit
+        #represents the value that the bias node for the hidden unit layer will transfer to an output unit
         inputValue = biasNode.inputValue
         
         #represents weight of edge connecting bias node for hidden unit layer to an output unit
         weight = biasNode.edgeWeights[index]
         
-        #represents product of the two variables above
+        #represents the product of the two variables above
         product = inputValue * weight
         
         output += product
