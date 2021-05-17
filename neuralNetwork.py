@@ -10,8 +10,8 @@ class Neuron:
         self.inputValue = inputValue #used to store input taken by a neural network
         self.error = error #represents error for a unit in a neural network
         self.output = output #represents output for a unit in a neural network
-    # 
-#
+   
+
  
 class NeuralNetwork:
     
@@ -47,8 +47,6 @@ class NeuralNetwork:
         #represents learning rate for neural network
         self.learningRate = learningRate
 
-    #
-    
     #*********************************************************************************************************#
     
     #this function is used when back propagation is being done
@@ -68,11 +66,8 @@ class NeuralNetwork:
             output = self.outputUnits[x].output
             target = targetValues[x]
             self.outputUnits[x].error = (output) * (1 - output) * (target - output) 
-        #
-
-    #
         
-    #*********************************************************************************************************#
+   #*********************************************************************************************************#
 
     #this function is used when back propagation is being done
     #updates the error for all the hidden units in a neural network
@@ -92,16 +87,12 @@ class NeuralNetwork:
             for y in range(0, len(edgeWeights)):
                 product = edgeWeights[y] * outputUnitErrors[y]
                 total += product
-            #
+           
             
             #calculate error of a hidden unit
             output = self.hiddenUnits[x].output
             self.hiddenUnits[x].error = output * (1 - output) * total
-            
-        #   
 
-    #
-    
     #*********************************************************************************************************#
     
     #updates all the weights for a neural network
@@ -124,11 +115,7 @@ class NeuralNetwork:
                 
                 #update weight of edge connecting an input unit to a hidden unit
                 self.inputUnits[x].edgeWeights[y] = self.inputUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
-                
-            #
-            
-        #
-        
+    
         #go through every hidden unit in a neural network
         for x in range(0, len(self.hiddenUnits)):
             
@@ -146,10 +133,6 @@ class NeuralNetwork:
 
                 #update weight of edge connecting a hidden unit to an output unit
                 self.hiddenUnits[x].edgeWeights[y] = self.hiddenUnits[x].edgeWeights[y] + (delta * inputValue * self.learningRate)
-                
-            #
-            
-        #
 
         #go through bias node for hidden unit layer
         for y in range(0, len(self.outputUnits)): 
@@ -159,11 +142,7 @@ class NeuralNetwork:
 
             #update weight of edge connecting bias node for hidden unit layer to an output unit
             self.biasNodeForHiddenUnit.edgeWeights[y] = self.biasNodeForHiddenUnit.edgeWeights[y] + (delta * self.learningRate)
-            
-        #
-        
-    #
-    
+
     #*********************************************************************************************************#
     
     #used to perform back propagation
@@ -182,9 +161,7 @@ class NeuralNetwork:
         
         #update weights for a neural network
         NeuralNetwork.updateNetworkWeights(self)
-        
-    #
-    
+
     #*********************************************************************************************************#
     
     #this function is used when forward propagation is being done
@@ -218,12 +195,9 @@ class NeuralNetwork:
             product = inputValue * weight 
 
             output += product 
-        #
         
         self.hiddenUnits[index].output = NeuralNetwork.sigmoid(self, output)
-           
-    #
-    
+  
     #*********************************************************************************************************#
     
     #this function is used when forward propagation is being done
@@ -257,8 +231,7 @@ class NeuralNetwork:
             product = inputValue * weight 
             
             output += product 
-        #
-        
+
         #represents bias node for hidden unit layer
         biasNode = self.biasNodeForHiddenUnit
         
@@ -274,9 +247,7 @@ class NeuralNetwork:
         output += product
         
         self.outputUnits[index].output = NeuralNetwork.sigmoid(self, output) 
-        
-    #
-    
+
     #*********************************************************************************************************#
     
     #serves as a sigmoid function
@@ -293,9 +264,7 @@ class NeuralNetwork:
         result = (1.0) / (1.0 * denominator)
             
         return result
-               
-    #
-    
+
     #*********************************************************************************************************#
    
     #used to perform forward propagation
@@ -311,8 +280,6 @@ class NeuralNetwork:
             #use input units to store values present in input vector
             self.inputUnits[x].inputValue = inputVector[x] 
             
-        #
-        
         #use bias node for input unit layer to store a 1
         self.inputUnits[len(self.inputUnits) - 1].inputValue = 1
         
@@ -324,19 +291,13 @@ class NeuralNetwork:
             
             #a hidden unit will transfer its output to an output unit
             self.hiddenUnits[x].inputValue = self.hiddenUnits[x].output
-            
-        #
-        
+
         #compute outputs for all output units
         for x in range(0, len(self.outputUnits)):
             
             #compute the output for an output unit
             NeuralNetwork.updateOutputForOutputUnit(self, x) 
-            
-        #
-        
-    #    
-    
+
     #*********************************************************************************************************#
     
     #used to help a neural network learn from a training example
@@ -364,9 +325,4 @@ class NeuralNetwork:
         NeuralNetwork.doBackwardPropagation(self, outputVector.copy())
                 
         return array
-        
-    #
-    
-    #*********************************************************************************************************#
-    
-#
+
