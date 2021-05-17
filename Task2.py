@@ -131,10 +131,10 @@ if __name__ == "__main__":
    #represents number of output units for a neural network
    numOutputUnits = 8
 
-   #minimum value for initial values of neural network weights
+   #minimum value for the initial values of neural network weights
    lowerLimitForRandNums = -0.1
 
-   #maximum value for initial values of neural network weights
+   #maximum value for the initial values of neural network weights
    upperLimitForRandNums = 0.1
 
    #represents learning rate for neural network
